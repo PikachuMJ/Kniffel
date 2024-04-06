@@ -14,6 +14,6 @@ public class Kniffel {
         Arrays.fill(buttonAvailability, true);
         //allgemein startet alles
 
-        new MyFrame(buttonAvailability, buttonPressCount2, Punkte.punkte);
+        new MyFrame(buttonAvailability, buttonPressCount2);
     }
 }

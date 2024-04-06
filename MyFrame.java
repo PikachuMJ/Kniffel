@@ -16,7 +16,7 @@ public class MyFrame extends JFrame implements ActionListener {
     boolean[] checkboxStates;
     int buttonPressCount;
     //constructor für MyFrame
-    public MyFrame(boolean[] buttonAvailability, int buttonPressCount2, int punkte) {
+    public MyFrame(boolean[] buttonAvailability, int buttonPressCount2) {
         setTitle("Checkbox Example");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

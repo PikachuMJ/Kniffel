@@ -127,7 +127,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
                 MyFrame.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
                 MyFrame.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
                 MyFrame.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
-                new MyFrame(buttonAvailability, Kniffel.buttonPressCount2, Punkte.punkte);
+                new MyFrame(buttonAvailability, Kniffel.buttonPressCount2);
                 //Dieses Fenster wird geschlossen
                 dispose();
             }
