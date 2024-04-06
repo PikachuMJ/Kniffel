@@ -1,5 +1,5 @@
 //Methoden zum Überprüfen aller kategorien in Kniffel
-public class check {
+public class Check {
     //Method zum Gucken Einser
     public static void Einser(int[] sortiert){
         for (int j : sortiert) {

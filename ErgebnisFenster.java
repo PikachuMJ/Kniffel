@@ -57,55 +57,55 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
         //nötigen werte werden rübergesendet
         if (clickedButton == buttons[0]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Einser(sortiert);
+            Check.Einser(sortiert);
         }
         if (clickedButton == buttons[1]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Zweier(sortiert);
+            Check.Zweier(sortiert);
         }
         if (clickedButton == buttons[2]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Dreier(sortiert);
+            Check.Dreier(sortiert);
         }
         if (clickedButton == buttons[3]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Vierer(sortiert);
+            Check.Vierer(sortiert);
         }
         if (clickedButton == buttons[4]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Fuenfer(sortiert);
+            Check.Fuenfer(sortiert);
         }
         if (clickedButton == buttons[5]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Sechser(sortiert);
+            Check.Sechser(sortiert);
         }
         if (clickedButton == buttons[6]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Dreierpasch(sortiert);
+            Check.Dreierpasch(sortiert);
         }
         if (clickedButton == buttons[7]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Viererpasch(sortiert);
+            Check.Viererpasch(sortiert);
         }
         if (clickedButton == buttons[8]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.FullHouse(sortiert);
+            Check.FullHouse(sortiert);
         }
         if (clickedButton == buttons[9]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.KleineStrasse(sortiert);
+            Check.KleineStrasse(sortiert);
         }
         if (clickedButton == buttons[10]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.GrosseStrasse(sortiert);
+            Check.GrosseStrasse(sortiert);
         }
         if (clickedButton == buttons[11]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Kniffel(sortiert);
+            Check.Kniffel(sortiert);
         }
         if (clickedButton == buttons[12]) {
             int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            check.Chance(sortiert);
+            Check.Chance(sortiert);
         }
         for (int i = 0; i < buttons.length; i++) {
             if (clickedButton == buttons[i]) {

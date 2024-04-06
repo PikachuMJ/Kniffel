@@ -10,10 +10,9 @@ public class Punkte
     //Methode zum Hinzufügen von Punkten
     public static void addPunkte(int addPunkte){
         punkte += addPunkte;
-
     }
     //Methode zum Zurücksetzen des Punktestandes, falls nötig
-    public static void PunkteReset(){
+    public static void punkteReset(){
         punkte = 0;
     }
 }
