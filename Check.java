@@ -1,6 +1,6 @@
 //Methoden zum Überprüfen aller kategorien in Kniffel
 public class Check {
-    //Method zum Gucken Einser
+    //Method zum Gucken Einser.
     public static void Einser(int[] sortiert){
         for (int j : sortiert) {
             if (j == 1) {
