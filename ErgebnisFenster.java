@@ -11,8 +11,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
     boolean[] buttonAvailability;
 
     //constructor ErgebnisFenster
-    public ErgebnisFenster(boolean[] buttonAvailability, int buttonPressCount2,
-                           int wuerfel1, int wuerfel2, int wuerfel3, int wuerfel4, int wuerfel5) {
+    public ErgebnisFenster(boolean[] buttonAvailability, int buttonPressCount2) {
         setTitle("Choose your category");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,67 +43,53 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
         for (JButton button : buttons) {
             add(button);
         }
-
-
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
+int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
         //button[i] wird zu clickedButton hinzugefügt
         JButton clickedButton = (JButton) e.getSource();
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen methoden auszuführen
         //nötigen werte werden rübergesendet
         if (clickedButton == buttons[0]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Einser(sortiert);
         }
         if (clickedButton == buttons[1]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Zweier(sortiert);
         }
         if (clickedButton == buttons[2]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Dreier(sortiert);
         }
         if (clickedButton == buttons[3]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Vierer(sortiert);
         }
         if (clickedButton == buttons[4]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Fuenfer(sortiert);
         }
         if (clickedButton == buttons[5]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Sechser(sortiert);
         }
         if (clickedButton == buttons[6]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Dreierpasch(sortiert);
         }
         if (clickedButton == buttons[7]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Viererpasch(sortiert);
         }
         if (clickedButton == buttons[8]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.FullHouse(sortiert);
         }
         if (clickedButton == buttons[9]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.KleineStrasse(sortiert);
         }
         if (clickedButton == buttons[10]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.GrosseStrasse(sortiert);
         }
         if (clickedButton == buttons[11]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Kniffel(sortiert);
         }
         if (clickedButton == buttons[12]) {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
             Check.Chance(sortiert);
         }
         for (int i = 0; i < buttons.length; i++) {
