@@ -83,8 +83,7 @@ public class MyFrame extends JFrame implements ActionListener {
                 //Und ergebnisFenster wird geöffnet
                 dispose();
                 Kniffel.buttonPressCount2++;
-                new ErgebnisFenster(Kniffel.buttonAvailability, Kniffel.buttonPressCount2,
-                        wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5); // Pass the button availability to ErgebnisFenster
+                new ErgebnisFenster(Kniffel.buttonAvailability, Kniffel.buttonPressCount2); // rüberschicken der button availability zum ErgebnisFenster
             } else {
                 //Stringbuilder zum Zusammenstellen der CHeckbox-Zustände
                 //Anfangs text "Checkbox states:\n"
