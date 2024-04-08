@@ -11,7 +11,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
     boolean[] buttonAvailability;
 
     //constructor ErgebnisFenster
-    public ErgebnisFenster(boolean[] buttonAvailability, int buttonPressCount2) {
+    public ErgebnisFenster(boolean[] buttonAvailability) {
         setTitle("Choose your category");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -112,7 +112,7 @@ int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.
                 MyFrame.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
                 MyFrame.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
                 MyFrame.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
-                new MyFrame(buttonAvailability, Kniffel.buttonPressCount2);
+                new MyFrame();
                 //Dieses Fenster wird geschlossen
                 dispose();
             }
