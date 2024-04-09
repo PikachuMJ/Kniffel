@@ -1,7 +1,7 @@
 //Methoden zum Überprüfen aller kategorien in Kniffel
 public class Check {
-    //Method zum Gucken Einser.
-    public static void Einser(int[] sortiert){
+    //Method zum Gucken Einser
+    public static void einser(int[] sortiert){
         for (int j : sortiert) {
             if (j == 1) {
                 Punkte.addPunkte(1);
@@ -11,7 +11,7 @@ public class Check {
         }
     }
     //Method zum Gucken Zweier
-    public static void Zweier(int[] sortiert){
+    public static void zweier(int[] sortiert){
         for (int j : sortiert) {
             if (j == 2){
                 Punkte.addPunkte(2);
@@ -21,7 +21,7 @@ public class Check {
         }
     }
     //Method zum Gucken Dreier
-    public static void Dreier(int[] sortiert){
+    public static void dreier(int[] sortiert){
         for (int j : sortiert) {
             if (j == 3) {
                 Punkte.addPunkte(3);
@@ -31,7 +31,7 @@ public class Check {
         }
     }
     //Method zum Gucken Vierer
-    public static void Vierer(int[] sortiert){
+    public static void vierer(int[] sortiert){
         for (int j : sortiert) {
             if (j == 4) {
                 Punkte.addPunkte(4);
@@ -41,7 +41,7 @@ public class Check {
         }
     }
     //Method zum Gucken Fuenfer
-    public static void Fuenfer(int[] sortiert){
+    public static void fuenfer(int[] sortiert){
         for (int j : sortiert) {
             if (j == 5) {
                 Punkte.addPunkte(5);
@@ -51,7 +51,7 @@ public class Check {
         }
     }
     //Method zum Gucken Sechser
-    public static void Sechser(int[] sortiert){
+    public static void sechser(int[] sortiert){
         for (int j : sortiert) {
             if (j == 6) {
                 Punkte.addPunkte(6);
@@ -61,7 +61,7 @@ public class Check {
         }
     }
     //Method zum Gucken Dreierpasch
-    public static void Dreierpasch(int[] sortiert){
+    public static void dreierpasch(int[] sortiert){
         int[] zaehler = new int[6];
 
         for (int zahl : sortiert){
@@ -76,7 +76,7 @@ public class Check {
         }
     }
     //Method zum GuckenViererpasch
-    public static void Viererpasch(int[] sortiert) {
+    public static void viererpasch(int[] sortiert) {
         int[] zaehler = new int[6];
 
         for (int zahl : sortiert) {
@@ -91,7 +91,7 @@ public class Check {
         }
     }
     //Method zum Gucken FullHouse
-    public static void FullHouse(int[] sortiert) {
+    public static void fullHouse(int[] sortiert) {
         int[] zaehler = new int[6];
 
         for (int zahl : sortiert) {
@@ -113,7 +113,7 @@ public class Check {
         }
     }
     //Method zum Gucken kleine Straße
-    public static void KleineStrasse(int[] sortiert) {
+    public static void kleineStrasse(int[] sortiert) {
         for (int i = 0; i < sortiert.length - 1; i++) {
             if (sortiert[i + 1] - sortiert[i] != 1) {
                 Punkte.addPunkte(0);
@@ -124,17 +124,19 @@ public class Check {
     }
 
     //Method zum Gucken große Straße
-    public static void GrosseStrasse(int[] sortiert) {
+    public static void grosseStrasse(int[] sortiert) {
+        boolean grosseStrasse = true;
         for (int i = 0; i < sortiert.length - 1; i++) {
             if (sortiert[i + 1] - sortiert[i] != 1) {
-                Punkte.addPunkte(0);
-            } else {
-                Punkte.addPunkte(40);
+                grosseStrasse = false;
             }
+        }
+        if (grosseStrasse && sortiert[4] - sortiert[0] == 4) {
+            Punkte.addPunkte(40);
         }
     }
     //Method zum Gucken Kniffel
-    public static void Kniffel(int[] sortiert){
+    public static void kniffel(int[] sortiert){
         int[] zaehler = new int[6];
 
         for (int zahl : sortiert) {
@@ -151,7 +153,7 @@ public class Check {
 
     }
     //Method zum Gucken Chance, also alles addiert
-    public static void Chance(int[] sortiert) {
+    public static void chance(int[] sortiert) {
         Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
     }
 }

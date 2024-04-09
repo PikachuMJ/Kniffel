@@ -47,50 +47,50 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
+        int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
         //button[i] wird zu clickedButton hinzugefügt
         JButton clickedButton = (JButton) e.getSource();
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen methoden auszuführen
         //nötigen werte werden rübergesendet
         if (clickedButton == buttons[0]) {
-            Check.Einser(sortiert);
+            Check.einser(sortiert);
         }
         if (clickedButton == buttons[1]) {
-            Check.Zweier(sortiert);
+            Check.zweier(sortiert);
         }
         if (clickedButton == buttons[2]) {
-            Check.Dreier(sortiert);
+            Check.dreier(sortiert);
         }
         if (clickedButton == buttons[3]) {
-            Check.Vierer(sortiert);
+            Check.vierer(sortiert);
         }
         if (clickedButton == buttons[4]) {
-            Check.Fuenfer(sortiert);
+            Check.fuenfer(sortiert);
         }
         if (clickedButton == buttons[5]) {
-            Check.Sechser(sortiert);
+            Check.sechser(sortiert);
         }
         if (clickedButton == buttons[6]) {
-            Check.Dreierpasch(sortiert);
+            Check.dreierpasch(sortiert);
         }
         if (clickedButton == buttons[7]) {
-            Check.Viererpasch(sortiert);
+            Check.viererpasch(sortiert);
         }
         if (clickedButton == buttons[8]) {
-            Check.FullHouse(sortiert);
+            Check.fullHouse(sortiert);
         }
         if (clickedButton == buttons[9]) {
-            Check.KleineStrasse(sortiert);
+            Check.kleineStrasse(sortiert);
         }
         if (clickedButton == buttons[10]) {
-            Check.GrosseStrasse(sortiert);
+            Check.grosseStrasse(sortiert);
         }
         if (clickedButton == buttons[11]) {
-            Check.Kniffel(sortiert);
+            Check.kniffel(sortiert);
         }
         if (clickedButton == buttons[12]) {
-            Check.Chance(sortiert);
+            Check.chance(sortiert);
         }
         for (int i = 0; i < buttons.length; i++) {
             if (clickedButton == buttons[i]) {
