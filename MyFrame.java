@@ -17,7 +17,7 @@ public class MyFrame extends JFrame implements ActionListener {
     int buttonPressCount;
     //constructor für MyFrame
     public MyFrame() {
-        setTitle("Checkbox Example");
+        setTitle("Wähle aus was du behalten willst");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -35,7 +35,7 @@ public class MyFrame extends JFrame implements ActionListener {
         }
 
         //erstellung des knopfes
-        evaluateButton = new JButton("Wähle aus was du behalten willst");
+        evaluateButton = new JButton("Neu würfeln/Weiter");
         evaluateButton.addActionListener(this);
         //panels für checkboxen und Knopf erstellen
         JPanel checkBoxPanel = new JPanel(new GridLayout(1, 2));
