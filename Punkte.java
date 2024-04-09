@@ -11,8 +11,4 @@ public class Punkte
     public static void addPunkte(int addPunkte){
         punkte += addPunkte;
     }
-    //Methode zum Zurücksetzen des Punktestandes, falls nötig
-    public static void punkteReset(){
-        punkte = 0;
-    }
 }

@@ -8,8 +8,6 @@ public class Kniffel {
     public static int buttonPressCount2 = 0;
 
     public static void main(String[] kniffelDings) {
-        ImageIcon icon = new ImageIcon("wuerfel4.png");
-        JOptionPane.showMessageDialog(null, "","",JOptionPane.PLAIN_MESSAGE, icon);
         //setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailability, true);
         //allgemein startet alles
