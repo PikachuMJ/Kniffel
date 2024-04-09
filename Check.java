@@ -4,10 +4,9 @@ public class Check {
     public static void einser(int[] sortiert){
         for (int j : sortiert) {
             if (j == 1) {
-                Punkte.addAllgemeinPunkte(1);
-                Punkte.addbonusPunkte(1);
+                Punkte.addPunkte(1);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -15,10 +14,9 @@ public class Check {
     public static void zweier(int[] sortiert){
         for (int j : sortiert) {
             if (j == 2){
-                Punkte.addAllgemeinPunkte(2);
-                Punkte.addbonusPunkte(2);
+                Punkte.addPunkte(2);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -26,10 +24,9 @@ public class Check {
     public static void dreier(int[] sortiert){
         for (int j : sortiert) {
             if (j == 3) {
-                Punkte.addAllgemeinPunkte(3);
-                Punkte.addbonusPunkte(3);
+                Punkte.addPunkte(3);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -37,10 +34,9 @@ public class Check {
     public static void vierer(int[] sortiert){
         for (int j : sortiert) {
             if (j == 4) {
-                Punkte.addAllgemeinPunkte(4);
-                Punkte.addbonusPunkte(4);
+                Punkte.addPunkte(4);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -48,10 +44,9 @@ public class Check {
     public static void fuenfer(int[] sortiert){
         for (int j : sortiert) {
             if (j == 5) {
-                Punkte.addAllgemeinPunkte(5);
-                Punkte.addbonusPunkte(5);
+                Punkte.addPunkte(5);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -59,17 +54,10 @@ public class Check {
     public static void sechser(int[] sortiert){
         for (int j : sortiert) {
             if (j == 6) {
-                Punkte.addAllgemeinPunkte(6);
-                Punkte.addbonusPunkte(6);
+                Punkte.addPunkte(6);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
-        }
-    }
-    public static void bonus (int bonusPunkte){
-        if(bonusPunkte >= 63){
-            Punkte.addAllgemeinPunkte(35);
-            bonusPunkte = -100000;
         }
     }
     //Method zum Gucken Dreierpasch
@@ -81,9 +69,9 @@ public class Check {
         }
         for (int zaehlerstand : zaehler) {
             if (zaehlerstand >= 3) {
-                Punkte.addAllgemeinPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+                Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -96,9 +84,9 @@ public class Check {
         }
         for (int zaehlerstand : zaehler) {
             if (zaehlerstand >= 4) {
-                Punkte.addAllgemeinPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+                Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
     }
@@ -119,30 +107,32 @@ public class Check {
             }
         }
         if (dreiVonEinerArt && zweiVonEinerArt) {
-            Punkte.addAllgemeinPunkte(25);
+            Punkte.addPunkte(25);
         } else {
-            Punkte.addAllgemeinPunkte(0);
+            Punkte.addPunkte(0);
         }
     }
     //Method zum Gucken kleine Straße
     public static void kleineStrasse(int[] sortiert) {
         for (int i = 0; i < sortiert.length - 1; i++) {
             if (sortiert[i + 1] - sortiert[i] != 1) {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             } else {
-                Punkte.addAllgemeinPunkte(30);
+                Punkte.addPunkte(30);
             }
         }
     }
 
     //Method zum Gucken große Straße
     public static void grosseStrasse(int[] sortiert) {
+        boolean grosseStrasse = true;
         for (int i = 0; i < sortiert.length - 1; i++) {
             if (sortiert[i + 1] - sortiert[i] != 1) {
-                Punkte.addAllgemeinPunkte(0);
-            } else {
-                Punkte.addAllgemeinPunkte(40);
+                grosseStrasse = false;
             }
+        }
+        if (grosseStrasse && sortiert[4] - sortiert[0] == 4) {
+            Punkte.addPunkte(40);
         }
     }
     //Method zum Gucken Kniffel
@@ -155,15 +145,15 @@ public class Check {
 
         for (int zaehlerstand : zaehler) {
             if (zaehlerstand == 5) {
-                Punkte.addAllgemeinPunkte(50);
+                Punkte.addPunkte(50);
             } else {
-                Punkte.addAllgemeinPunkte(0);
+                Punkte.addPunkte(0);
             }
         }
 
     }
     //Method zum Gucken Chance, also alles addiert
     public static void chance(int[] sortiert) {
-        Punkte.addAllgemeinPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+        Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
     }
 }

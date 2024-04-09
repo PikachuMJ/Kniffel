@@ -9,7 +9,7 @@ public class Punkte
         return allgemeinPunkte;
     }
     //Methode zum Hinzufügen von Punkten
-    public static void addAllgemeinPunkte(int addPunkte){
+    public static void addPunkte(int addPunkte){
         allgemeinPunkte += addPunkte;
     }
     public static void addbonusPunkte(int addPunkte) {
