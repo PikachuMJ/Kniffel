@@ -1,4 +1,10 @@
 //Methoden zum Überprüfen aller kategorien in Kniffel
+/*  erklärung zur for each schleife, da ich sie hier oft benutze
+ *  allgemeine syntax: for (Datentyp element : sammlung)
+ * bei einem array mit zb 5 zahlen
+ * und einem syntax mit for (int zahl : array) { System.out.println(zahl); }
+ * würden alle werte von dem array nacheinander ausgegeben werden
+ */
 public class Check
 {
     //Method zum Gucken Einser
@@ -133,7 +139,8 @@ public class Check
             if (zaehlerstand == 3)
             {
                 dreiVonEinerArt = true;
-            } else if (zaehlerstand == 2)
+            }
+            if (zaehlerstand == 2)
             {
                 zweiVonEinerArt = true;
             }
