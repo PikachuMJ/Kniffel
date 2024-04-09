@@ -114,25 +114,38 @@ public class Check {
     }
     //Method zum Gucken kleine Straße
     public static void kleineStrasse(int[] sortiert) {
-        for (int i = 0; i < sortiert.length - 1; i++) {
-            if (sortiert[i + 1] - sortiert[i] != 1) {
-                Punkte.addPunkte(0);
-            } else {
-                Punkte.addPunkte(30);
+        boolean kleineStrasseGefunden = false;
+        for (int i = 0; i < sortiert.length - 3; i++) {
+            if ((sortiert[i] == 1 && sortiert[i + 1] == 2 && sortiert[i + 2] == 3 && sortiert[i + 3] == 4) ||
+                    (sortiert[i] == 2 && sortiert[i + 1] == 3 && sortiert[i + 2] == 4 && sortiert[i + 3] == 5) ||
+                    (sortiert[i] == 1 && sortiert[i + 1] == 2 && sortiert[i + 2] == 2 && sortiert[i + 3] == 3) ||
+                    (sortiert[i] == 2 && sortiert[i + 1] == 2 && sortiert[i + 2] == 3 && sortiert[i + 3] == 4) ||
+                    (sortiert[i] == 2 && sortiert[i + 1] == 3 && sortiert[i + 2] == 3 && sortiert[i + 3] == 4) ||
+                    (sortiert[i] == 3 && sortiert[i + 1] == 4 && sortiert[i + 2] == 5 && sortiert[i + 3] == 6))
+            {
+                kleineStrasseGefunden = true;
+                break; // Eine kleine Straße wurde gefunden, breche die Schleife ab
             }
+        }
+        if (kleineStrasseGefunden) {
+            Punkte.addPunkte(30);
+        } else {
+            Punkte.addPunkte(0);
         }
     }
 
     //Method zum Gucken große Straße
     public static void grosseStrasse(int[] sortiert) {
-        boolean grosseStrasse = true;
-        for (int i = 0; i < sortiert.length - 1; i++) {
-            if (sortiert[i + 1] - sortiert[i] != 1) {
-                grosseStrasse = false;
-            }
+        boolean grosseStrasseGefunden = false;
+        // Überprüfe, ob die sortierte Reihenfolge die Große Straße ergibt
+        if ((sortiert[0] == 1 && sortiert[1] == 2 && sortiert[2] == 3 && sortiert[3] == 4 && sortiert[4] == 5) ||
+                (sortiert[0] == 2 && sortiert[1] == 3 && sortiert[2] == 4 && sortiert[3] == 5 && sortiert[4] == 6)) {
+            grosseStrasseGefunden = true;
         }
-        if (grosseStrasse && sortiert[4] - sortiert[0] == 4) {
+        if (grosseStrasseGefunden) {
             Punkte.addPunkte(40);
+        } else {
+            Punkte.addPunkte(0);
         }
     }
     //Method zum Gucken Kniffel
