@@ -122,7 +122,7 @@ public class MyFrame extends JFrame implements ActionListener {
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Placeholder ausgabe
                 System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
-                System.out.println("Punkte: "+Punkte.punkte);
+                System.out.println("Punkte: "+Punkte.allgemeinPunkte);
             }
         }
     }

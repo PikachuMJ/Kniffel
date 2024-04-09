@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ErgebnisFenster extends JFrame implements ActionListener {
+    boolean bonusCheck = true;
     // Bilder für gewinner/verlierer (noch nicht benutzt)
     static ImageIcon Win = new ImageIcon("win.png");
     static ImageIcon Lose = new ImageIcon("lose.png");
@@ -92,6 +93,10 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
         if (clickedButton == buttons[12]) {
             Check.chance(sortiert);
         }
+        if(!buttonAvailability[0] && !buttonAvailability[1] && !buttonAvailability[2] && !buttonAvailability[3] && !buttonAvailability[4] && !buttonAvailability[5] && bonusCheck){
+            Check.bonus(Punkte.bonusPunkte);
+            bonusCheck = false;
+        }
         for (int i = 0; i < buttons.length; i++) {
             if (clickedButton == buttons[i]) {
                 index = i;
@@ -118,7 +123,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener {
             }
             System.out.println("Wie oft wurde der Knopf gedrückt: " + Kniffel.buttonPressCount2);
             if (Kniffel.buttonPressCount2 == 13) {
-                JOptionPane.showMessageDialog(this, "Ergebnis: " + Punkte.getPunkte());
+                JOptionPane.showMessageDialog(this, "Ergebnis: " + Punkte.getAllgemeinPunkte());
                 JOptionPane.showMessageDialog(null, "Gewinner :O", "Mikakika ", JOptionPane.PLAIN_MESSAGE, Win);
                 JOptionPane.showMessageDialog(null, "Verlierer :c", "Mikakika", JOptionPane.PLAIN_MESSAGE, Lose);
                 dispose();
