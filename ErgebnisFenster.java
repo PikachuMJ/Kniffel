@@ -22,17 +22,17 @@ public class ErgebnisFenster extends JFrame implements ActionListener
 
         this.buttonAvailability = buttonAvailability;
         //erstellen der Knöpfe
-        buttons = new JButton[13];
-        buttons[0] = new JButton("Einser");
-        buttons[1] = new JButton("Zweier");
-        buttons[2] = new JButton("Dreier");
-        buttons[3] = new JButton("Vierer");
-        buttons[4] = new JButton("Fünfer");
-        buttons[5] = new JButton("Sechser");
-        buttons[6] = new JButton("Dreierpasch");
-        buttons[7] = new JButton("Viererpasch");
-        buttons[8] = new JButton("Full House");
-        buttons[9] = new JButton("Kleine Straße");
+        buttons     = new JButton[13];
+        buttons[0]  = new JButton("Einser");
+        buttons[1]  = new JButton("Zweier");
+        buttons[2]  = new JButton("Dreier");
+        buttons[3]  = new JButton("Vierer");
+        buttons[4]  = new JButton("Fünfer");
+        buttons[5]  = new JButton("Sechser");
+        buttons[6]  = new JButton("Dreierpasch");
+        buttons[7]  = new JButton("Viererpasch");
+        buttons[8]  = new JButton("Full House");
+        buttons[9]  = new JButton("Kleine Straße");
         buttons[10] = new JButton("Große Straße");
         buttons[11] = new JButton("Kniffel");
         buttons[12] = new JButton("Chance");
