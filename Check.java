@@ -148,56 +148,71 @@ public class Check
         if (dreiVonEinerArt && zweiVonEinerArt)
         {
             Punkte.addPunkte(25);
-        } else {
+        } else
+        {
             Punkte.addPunkte(0);
         }
     }
     //Method zum Gucken kleine Straße
-    static void kleineStrasse(int[] sortiert) {
+    static void kleineStrasse(int[] sortiert)
+    {
         boolean kleineStrasseGefunden = false;
-        int consecutiveCount = 1; // Start with 1 to count the first number in a potential sequence
-
-        for (int i = 0; i < sortiert.length - 1; i++) {
-            // Check if the next number is consecutive; if so, increment the count
-            if (sortiert[i] + 1 == sortiert[i + 1]) {
-                consecutiveCount++;
-                // If we have found 4 consecutive numbers, we have a small straight
-                if (consecutiveCount >= 4) {
+        int aufeiCount = 1;
+        for (int i = 0; i < sortiert.length - 1; i++)
+        {
+            // wenn nächste zahl, so aufeinanderfolgend ist, wird count + 1 gemacht
+            if (sortiert[i] + 1 == sortiert[i + 1])
+            {
+                aufeiCount++;
+                // wenn 4 aufeinanderfolgende Zahlen gefunden wurden, wird
+                // die Schleife abgebrochen. Ja es funktioniert
+                // war am anfang bissel skeptisch
+                if (aufeiCount >= 4)
+                {
                     kleineStrasseGefunden = true;
                     break;
                 }
-            } else if (sortiert[i] != sortiert[i + 1]) { // Reset count if numbers are not consecutive and not equal (to handle duplicates)
-                consecutiveCount = 1;
+                // wenn duplikat gefunden wurde, wird count zurückgesetzt
+            } else if (sortiert[i] != sortiert[i + 1])
+            {
+                aufeiCount = 1;
             }
-            // Note: No else block needed for handling duplicates (sortiert[i] == sortiert[i + 1])
         }
 
-        if (kleineStrasseGefunden) {
+        if (kleineStrasseGefunden)
+        {
             Punkte.addPunkte(30);
-        } else {
+        } else
+        {
             Punkte.addPunkte(0);
         }
     }
 
     //Method zum Gucken große Straße
-    static void grosseStrasse(int[] sortiert) {
+    static void grosseStrasse(int[] sortiert)
+    {
         // Gehe von Wahrheit aus, wird nach gegenargument gesucht
         boolean grosseStrasseGefunden = true;
-        for (int i = 0; i < sortiert.length - 1; i++) {
-            if (sortiert[i] + 1 != sortiert[i + 1]) {
+        for (int i = 0; i < sortiert.length - 1; i++)
+        {
+            if (sortiert[i] + 1 != sortiert[i + 1])
+            {
                 grosseStrasseGefunden = false;
                 // wenn keine große straße möglich ist, wird die Schleife abgebrochen
                 break;
             }
         }
         // sortiert muss mit 1 für eine 1-5 Straße oder mit 2 für eine 2-6 Straße beginnen.
-        if (!(sortiert[0] == 1 || sortiert[0] == 2)) {
+        if (!(sortiert[0] == 1 || sortiert[0] == 2))
+        {
             grosseStrasseGefunden = false;
         }
 
-        if (grosseStrasseGefunden) {
+        if (grosseStrasseGefunden)
+        {
             Punkte.addPunkte(40);
-        } else {
+        } else
+        {
             Punkte.addPunkte(0);
         }
     }
