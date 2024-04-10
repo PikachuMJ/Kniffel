@@ -59,82 +59,58 @@ public class ErgebnisFenster extends JFrame implements ActionListener
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen methoden auszuführen
         //nötigen werte werden rübergesendet
+        int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
+        Arrays.sort(sortiert);
         if (clickedButton == buttons[0])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.einser(sortiert);
         }
         if (clickedButton == buttons[1])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.zweier(sortiert);
         }
         if (clickedButton == buttons[2])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.dreier(sortiert);
         }
         if (clickedButton == buttons[3])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.vierer(sortiert);
         }
         if (clickedButton == buttons[4])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.fuenfer(sortiert);
         }
         if (clickedButton == buttons[5])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.sechser(sortiert);
         }
         if (clickedButton == buttons[6])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.dreierpasch(sortiert);
         }
         if (clickedButton == buttons[7])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.viererpasch(sortiert);
         }
         if (clickedButton == buttons[8])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.fullHouse(sortiert);
         }
         if (clickedButton == buttons[9])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.kleineStrasse(sortiert);
         }
         if (clickedButton == buttons[10])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.grosseStrasse(sortiert);
         }
         if (clickedButton == buttons[11])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.kniffel(sortiert);
         }
         if (clickedButton == buttons[12])
         {
-            int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
-            Arrays.sort(sortiert);
             Check.chance(sortiert);
         }
         if(!buttonAvailability[0] && !buttonAvailability[1] && !buttonAvailability[2] && !buttonAvailability[3] && !buttonAvailability[4] && !buttonAvailability[5] && bonusCheck)
