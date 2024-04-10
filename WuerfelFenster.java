@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-public class MyFrame extends JFrame implements ActionListener
+public class WuerfelFenster extends JFrame implements ActionListener
 {
     //Bilder für checkbox (Hacken und X)
     ImageIcon wBildC = new ImageIcon("checkbox.png");
@@ -16,8 +16,8 @@ public class MyFrame extends JFrame implements ActionListener
     JButton evaluateButton;
     boolean[] checkboxStates;
     int buttonPressCount;
-    //constructor für MyFrame
-    public MyFrame()
+    //constructor für WuerfelFenster
+    public WuerfelFenster()
     {
         setTitle("Wähle aus was du behalten willst");
         setSize(400, 400);
@@ -88,11 +88,12 @@ public class MyFrame extends JFrame implements ActionListener
             //wenn der knopf 3-mal gedrückt wurde
             if (buttonPressCount == 3)
             {
-                //schließt das Fenster, fügt einen button press für die Knöpfe von ergebnisfenster
-                //Und ergebnisFenster wird geöffnet
+                //schließt das Fenster, fügt einen button press für die Knöpfe von AuswahlFenster
+                //und AuswahlFenster wird geöffnet
                 dispose();
                 Kniffel.buttonPressCount2++;
-                new ErgebnisFenster(Kniffel.buttonAvailability); // rüberschicken der button availability zum ErgebnisFenster
+                // rüberschicken der button availability zum AuswahlFenster
+                new AuswahlFenster(Kniffel.buttonAvailability);
             } else {
                     //Stringbuilder zum Zusammenstellen der CHeckbox-Zustände
                     //Anfangs text "Checkbox states:\n"
@@ -101,7 +102,7 @@ public class MyFrame extends JFrame implements ActionListener
                     {
                         //Zustand der checkboxen wird in checkboxStates Array gespeichert
                         checkboxStates[i] = checkBoxes[i].isSelected();
-                        //leicht kompliziert deshalb lasse ich ki den Kommentar machen :D
+                        //kein bock alle zu erklären also macht ki das kurz für mich :O
                         //result.append("Auswahl ").append(i + 1).append(": ").append(checkboxStates[i]).append("\n");:
                         // Hier werden verschiedene Zeichenketten an das StringBuilder-Objekt angehängt.
                         // append fügt die angegebene Zeichenkette oder das angegebene Objekt am Ende der aktuellen Zeichenkette hinzu.

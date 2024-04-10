@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
-public class ErgebnisFenster extends JFrame implements ActionListener
+public class AuswahlFenster extends JFrame implements ActionListener
 {
     boolean bonusCheck = true;
     // Bilder für gewinner/verlierer (noch nicht benutzt)
@@ -13,8 +13,8 @@ public class ErgebnisFenster extends JFrame implements ActionListener
     JButton[] buttons;
     boolean[] buttonAvailability;
 
-    //constructor ErgebnisFenster
-    public ErgebnisFenster(boolean[] buttonAvailability)
+    //constructor AuswahlFenster
+    public AuswahlFenster(boolean[] buttonAvailability)
     {
         setTitle("Choose your category");
         setSize(400, 300);
@@ -40,7 +40,8 @@ public class ErgebnisFenster extends JFrame implements ActionListener
         for (int i = 0; i < buttons.length; i++)
         {
             buttons[i].addActionListener(this);
-            // Sichtbarkeit anhand buttonAvailability(true oder false, wenn gedrückt einfach gesagt)
+            // Sichtbarkeit anhand buttonAvailability
+            // (true oder false, wenn gedrückt einfach gesagt)
             buttons[i].setVisible(buttonAvailability[i]);
         }
         //Layout für knöpfe
@@ -59,7 +60,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen methoden auszuführen
         //nötigen werte werden rübergesendet
-        int[] sortiert = {MyFrame.wuerfel1, MyFrame.wuerfel2, MyFrame.wuerfel3, MyFrame.wuerfel4, MyFrame.wuerfel5};
+        int[] sortiert = {WuerfelFenster.wuerfel1, WuerfelFenster.wuerfel2, WuerfelFenster.wuerfel3, WuerfelFenster.wuerfel4, WuerfelFenster.wuerfel5};
         Arrays.sort(sortiert);
         if (clickedButton == buttons[0])
         {
@@ -131,18 +132,21 @@ public class ErgebnisFenster extends JFrame implements ActionListener
         {
             //MessageDialog anzeigen + knopf deaktivieren
             JOptionPane.showMessageDialog(this, "You selected " + clickedButton.getText());
-            buttonAvailability[index] = false; // Button cannot be clicked again
-            clickedButton.setVisible(false); // Hide the button
+            //knopf kann nicht mehr gedrückt werden (ausgegraut)
+            buttonAvailability[index] = false;
+            //Knopf verschwindet bzw gelöscht
+            clickedButton.setVisible(false);
             //wenn noch mindestens eine möglichkeit zum Drücken existiert
             //wird nochmal gewürfelt bzw alles wiederholt
             if (Kniffel.buttonPressCount2 < 13)
             {
-                MyFrame.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
-                MyFrame.wuerfel2 = ((int) ((Math.random()) * 6 + 1));
-                MyFrame.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
-                MyFrame.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
-                MyFrame.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
-                new MyFrame();
+                WuerfelFenster.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
+                WuerfelFenster.wuerfel2 = ((int) ((Math.random()) * 6 + 1));
+                WuerfelFenster.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
+                WuerfelFenster.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
+                WuerfelFenster.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
+                //Wiederholter Aufruf von WuerfelFenster
+                new WuerfelFenster();
                 //Dieses Fenster wird geschlossen
                 dispose();
             }

@@ -2,7 +2,8 @@ import java.util.Arrays;
 
 public class Kniffel
 {
-    //Array speichert Verfügbarkeit der Knöpfe in ErgebnisFenster
+    //Array speichert Verfügbarkeit der Knöpfe in AuswahlFenster
+    //  (hab bis jetzt keine bessere lösung gefunden)
     static boolean[] buttonAvailability = new boolean[13];
     //speichert Anzahl der Knopfdrücke die in MyFrame passieren
     static int buttonPressCount2 = 0;
@@ -13,6 +14,6 @@ public class Kniffel
         Arrays.fill(buttonAvailability, true);
         //allgemein startet alles
 
-        new MyFrame();
+        new WuerfelFenster();
     }
 }
