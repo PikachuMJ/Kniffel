@@ -215,7 +215,7 @@ public class Check
         }
 
     }
-    //Method zum Gucken Chance, also alles addiert.
+    //Method zum Gucken Chance, also alles addiert
     static void chance(int[] sortiert)
     {
         Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);

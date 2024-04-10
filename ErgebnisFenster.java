@@ -54,7 +54,7 @@ public class ErgebnisFenster extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        //button[i] wird zu clickedButton hinzugefügt.
+        //button[i] wird zu clickedButton hinzugefügt
         JButton clickedButton = (JButton) e.getSource();
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen methoden auszuführen

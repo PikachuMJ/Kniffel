@@ -89,7 +89,7 @@ public class MyFrame extends JFrame implements ActionListener
             if (buttonPressCount == 3)
             {
                 //schließt das Fenster, fügt einen button press für die Knöpfe von ergebnisfenster
-                //Und ergebnisFenster wird geöffnet.
+                //Und ergebnisFenster wird geöffnet
                 dispose();
                 Kniffel.buttonPressCount2++;
                 new ErgebnisFenster(Kniffel.buttonAvailability); // rüberschicken der button availability zum ErgebnisFenster
