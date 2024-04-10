@@ -11,7 +11,7 @@ public class Kniffel
     {
         //setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailability, true);
-        //allgemein startet alles
+        //allgemein startet alles.
 
         new MyFrame();
     }
