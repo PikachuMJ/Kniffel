@@ -181,7 +181,7 @@ public class Check
     static void grosseStrasse(int[] sortiert)
     {
         boolean grosseStrasseGefunden = false;
-        // Überprüfe, ob die sortierte Reihenfolge die Große Straße ergibt
+        // Überprüfe, ob die sortierte Reihenfolge die große Straße ergibt
         if ((sortiert[0] == 1 && sortiert[1] == 2 && sortiert[2] == 3 && sortiert[3] == 4 && sortiert[4] == 5) ||
                 (sortiert[0] == 2 && sortiert[1] == 3 && sortiert[2] == 4 && sortiert[3] == 5 && sortiert[4] == 6))
         {
