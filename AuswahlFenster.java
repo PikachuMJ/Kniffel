@@ -11,16 +11,19 @@ public class AuswahlFenster extends JFrame implements ActionListener
     static ImageIcon Win = new ImageIcon("win.png");
     static ImageIcon Lose = new ImageIcon("lose.png");
     JButton[] buttons;
-    boolean[] buttonAvailability;
+    boolean[] buttonAvailP1;
+    boolean[] buttonAvailP2;
+
 
     //constructor AuswahlFenster
-    public AuswahlFenster(boolean[] buttonAvailability)
+    public AuswahlFenster(boolean[] buttonAvailP1, boolean[] buttonAvailP2)
     {
         setTitle("Choose your category");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.buttonAvailability = buttonAvailability;
+        this.buttonAvailP1 = buttonAvailP1;
+		this.buttonAvailP2 = buttonAvailP2;
         //erstellen der Knöpfe
         buttons     = new JButton[13];
         buttons[0]  = new JButton("Einser");
@@ -42,7 +45,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
             buttons[i].addActionListener(this);
             // Sichtbarkeit anhand buttonAvailability
             // (true oder false, wenn gedrückt einfach gesagt)
-            buttons[i].setVisible(buttonAvailability[i]);
+            buttons[i].setVisible(buttonAvailP1[i]);
         }
         //Layout für knöpfe
         setLayout(new GridLayout(13, 1));
@@ -114,7 +117,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
         {
             Check.chance(sortiert);
         }
-        if(!buttonAvailability[0] && !buttonAvailability[1] && !buttonAvailability[2] && !buttonAvailability[3] && !buttonAvailability[4] && !buttonAvailability[5] && bonusCheck)
+        if(!buttonAvailP1[0] && !buttonAvailP1[1] && !buttonAvailP1[2] && !buttonAvailP1[3] && !buttonAvailP1[4] && !buttonAvailP1[5] && bonusCheck)
         {
             Punkte.addbonusPunkte(Punkte.bonusPunkte);
             bonusCheck = false;
@@ -128,12 +131,12 @@ public class AuswahlFenster extends JFrame implements ActionListener
             }
         }
         //überprüft ob der knopf verfügbar ist
-        if (buttonAvailability[index])
+        if (buttonAvailP1[index])
         {
             //MessageDialog anzeigen + knopf deaktivieren
             JOptionPane.showMessageDialog(this, "You selected " + clickedButton.getText());
             //knopf kann nicht mehr gedrückt werden (ausgegraut)
-            buttonAvailability[index] = false;
+            buttonAvailP1[index] = false;
             //Knopf verschwindet bzw gelöscht
             clickedButton.setVisible(false);
             //wenn noch mindestens eine möglichkeit zum Drücken existiert
