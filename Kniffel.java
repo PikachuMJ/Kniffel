@@ -4,7 +4,7 @@ public class Kniffel
 {
     //Array speichert Verfügbarkeit der Knöpfe in AuswahlFenster
     //  (hab bis jetzt keine bessere lösung gefunden)
-    static boolean[] buttonAvailability = new boolean[13];
+    static boolean[][] buttonAvailability = new boolean[2][13];
     //speichert Anzahl der Knopfdrücke die in MyFrame passieren
     static int buttonPressCount2 = 0;
 
