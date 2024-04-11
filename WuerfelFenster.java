@@ -94,7 +94,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 dispose();
                 Kniffel.buttonPressCount2++;
                 // rüberschicken der button availability zum AuswahlFenster
-                new AuswahlFenster(Kniffel.buttonAvailability);
+                new AuswahlFenster(Kniffel.buttonAvailP1, Kniffel.buttonAvailP2);
             } else {
                     //Stringbuilder zum Zusammenstellen der CHeckbox-Zustände
                     //Anfangs text "Checkbox states:\n"
