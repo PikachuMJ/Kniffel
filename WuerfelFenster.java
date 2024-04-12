@@ -99,7 +99,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
 
                     //Messagebox mit den Checkbox-Zuständen anzeigen
                     if (buttonPressCount < 3)
-                    {;
+                    {
                         //wenn checkbox nicht ausgewählt ist, man diese Zahl also neuwürfeln will löst es aus
                         if (!checkboxStates[0])
                         {
@@ -126,14 +126,14 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Placeholder ausgabe
                 System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
-                System.out.println( " Punkte Spieler 1: "+Punkte.punkteSpieler[0] + " \n"+
-                                    " Punkte Spieler 2: "+Punkte.punkteSpieler[1]+ "\n"+
-                                    " Punkte Spieler 3: "+Punkte.punkteSpieler[2]+ "\n"+
-                                    " Punkte Spieler 4: "+Punkte.punkteSpieler[3]+ "\n"+
-                                    " Punkte Spieler 5: "+Punkte.punkteSpieler[4]+ "\n"+
-                                    " Punkte Spieler 6: "+Punkte.punkteSpieler[5]+ "\n"+
-                                    " Punkte Spieler 7: "+Punkte.punkteSpieler[6]+ "\n"+
-                                    " Punkte Spieler 8: "+Punkte.punkteSpieler[7]);
+                System.out.println( " Punkte "+Kniffel.p1Name+ " "+Punkte.punkteSpieler[0] + " \n"+
+                                    " Punkte "+Kniffel.p2Name+ " "+Punkte.punkteSpieler[1]+ "\n"+
+                                    " Punkte "+Kniffel.p3Name+ " "+Punkte.punkteSpieler[2]+ "\n"+
+                                    " Punkte "+Kniffel.p4Name+ " "+Punkte.punkteSpieler[3]+ "\n"+
+                                    " Punkte "+Kniffel.p5Name+ " "+Punkte.punkteSpieler[4]+ "\n"+
+                                    " Punkte "+Kniffel.p6Name+ " "+Punkte.punkteSpieler[5]+ "\n"+
+                                    " Punkte "+Kniffel.p7Name+ " "+Punkte.punkteSpieler[6]+ "\n"+
+                                    " Punkte "+Kniffel.p8Name+ " "+Punkte.punkteSpieler[7]);
             }
         }
     }

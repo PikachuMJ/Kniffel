@@ -5,6 +5,14 @@ public class Kniffel
 {
     //Array speichert Verfügbarkeit der Knöpfe in AuswahlFenster
     //  (hab bis jetzt keine bessere lösung gefunden)
+    static String p1Name = "";
+    static String p2Name = "";
+    static String p3Name = "";
+    static String p4Name = "";
+    static String p5Name = "";
+    static String p6Name = "";
+    static String p7Name = "";
+    static String p8Name = "";
     static int playerPlaying = 0;
     static int maxPlayerCount = 0;
     static int cheesyBalls = 0;
@@ -52,6 +60,28 @@ public class Kniffel
             case 6: cheesyBalls = 78; break;
             case 7: cheesyBalls = 91; break;
             case 8: cheesyBalls = 104; break;
+        }
+        p1Name = JOptionPane.showInputDialog("Spieler 1, geben sie ihren Namen an (oder was anderes)");
+        if(playerPlaying > 1){
+            p2Name = JOptionPane.showInputDialog("Spieler 2, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 2){
+            p3Name = JOptionPane.showInputDialog("Spieler 3, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 3){
+            p4Name = JOptionPane.showInputDialog("Spieler 4, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 4){
+            p5Name = JOptionPane.showInputDialog("Spieler 5, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 5){
+            p6Name = JOptionPane.showInputDialog("Spieler 6, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 6){
+            p7Name = JOptionPane.showInputDialog("Spieler 7, geben sie ihren Namen an (oder was anderes)");
+        }
+        if(playerPlaying > 7){
+            p8Name = JOptionPane.showInputDialog("Spieler 8, geben sie ihren Namen an (oder was anderes)");
         }
         playerPlaying = 1;
         new WuerfelFenster();

@@ -226,7 +226,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 dispose();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "This option has already been chosen!");
+            JOptionPane.showMessageDialog(this, "Diese Option wurde schon benutzt");
         }
     }
 }
