@@ -1,10 +1,18 @@
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-
+/**
+ * Kniffel
+ *
+ * @author MAP
+ * @version 20240412.40
+ */
 public class Kniffel
 {
-    //Array speichert Verfügbarkeit der Knöpfe in AuswahlFenster
-    //  (hab bis jetzt keine bessere lösung gefunden)
+
+    //Arrays speichern die namen der Spieler
+    //und der einzelnen button availability
+    //cheesyBalls = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
+    //passieren sollen bis etwas Bestimmtes auslöst
     static String p1Name = "";
     static String p2Name = "";
     static String p3Name = "";
@@ -25,21 +33,25 @@ public class Kniffel
     static boolean[] buttonAvailP7 = new boolean[13];
     static boolean[] buttonAvailP8 = new boolean[13];
 
-    //speichert Anzahl der Knopfdrücke die in MyFrame passieren
+    //speichert Anzahl der Knopfdrücke die in AuswahlFenster bzw Wuerfelfenster passieren
     static int buttonPressCount2 = 0;
 
     public static void main(String[] kniffelDings)
     {
         do
-        {
+        {  //Einfache do schleife, zur auswahl der Spieler
             try
             {
-                playerPlaying = Integer.parseInt(JOptionPane.showInputDialog(null, "Wie viele Spieler möchten sie?"));
+                playerPlaying = Integer.parseInt(JOptionPane.showInputDialog(null, "Zu wievielt spielen sie? \n (maximal 8 Spieler"));
             } catch (Exception e)
             {
                 playerPlaying = 0;
             }
         }while (playerPlaying < 1 || playerPlaying > 9);
+        //maxPLayer sind die ausgewählten spieler,
+        //playerPlaying verändert sich ständig und ist
+        //deshalb für meine zwecke nicht unbedingt gut nutzbar
+        // (im Bereich der Vergleiche)
         maxPlayerCount = playerPlaying;
         //setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailP1, true);
@@ -50,7 +62,11 @@ public class Kniffel
         Arrays.fill(buttonAvailP6, true);
         Arrays.fill(buttonAvailP7, true);
         Arrays.fill(buttonAvailP8, true);
-        //allgemein startet alles
+        //je nach anzahl der spieler
+        //müssen verschieden viele
+        //knopf drücke passieren.
+        //btw den namen hat sich ein Freund von mir ausgedacht :O
+        //nichts anderes wie buttonPressCount
         switch(playerPlaying)
         {
             case 1: cheesyBalls = 13; break;
@@ -62,6 +78,7 @@ public class Kniffel
             case 7: cheesyBalls = 91; break;
             case 8: cheesyBalls = 104; break;
         }
+        //spieler wird nach namen gefragt, wenn er mitmacht
         p1Name = JOptionPane.showInputDialog("Spieler 1, geben sie ihren Namen an (oder was anderes)");
         if(playerPlaying > 1)
         {
@@ -91,6 +108,7 @@ public class Kniffel
         {
             p8Name = JOptionPane.showInputDialog("Spieler 8, geben sie ihren Namen an (oder was anderes)");
         }
+        //Player wird auf 1 gesetzt, damit auch der erste anfängt
         playerPlaying = 1;
         new WuerfelFenster();
     }

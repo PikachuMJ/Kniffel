@@ -10,6 +10,8 @@ public class Check
     //Method zum Gucken Einser
     static void einser(int[] sortiert)
     {
+        //j nimmt nach einander jeden wert
+        // von sortiert an und vergleicht sie mit 1
         for (int j : sortiert)
         {
             if (j == 1)

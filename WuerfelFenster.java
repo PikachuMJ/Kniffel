@@ -53,7 +53,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(checkBoxPanel, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-        //mainPanel zum frame hinzufügen + sichtbar
+        //mainPanel zum frame hinzufügen + in der Mitte des Bildschirms + sichtbar
         add(mainPanel);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -94,11 +94,8 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 //und AuswahlFenster wird geöffnet
                 dispose();
                 Kniffel.buttonPressCount2++;
-                // rüberschicken der button availability zum AuswahlFenster
                 new AuswahlFenster();
             } else {
-
-                    //Messagebox mit den Checkbox-Zuständen anzeigen
                     if (buttonPressCount < 3)
                     {
                         //wenn checkbox nicht ausgewählt ist, man diese Zahl also neuwürfeln will löst es aus
@@ -125,7 +122,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                     }
                 //Checkbox mit neuen werten aktualisieren, damit auch immer die aktuellen Zahlen angezeigt werden
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
-                //Placeholder ausgabe
+                //Wahrscheinlich lasse ich die ausgabe so bis ich was Besseres finde
                 System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
                 System.out.println( " Punkte "+Kniffel.p1Name+ " "+Punkte.punkteSpieler[0] + " \n"+
                                     " Punkte "+Kniffel.p2Name+ " "+Punkte.punkteSpieler[1]+ "\n"+
