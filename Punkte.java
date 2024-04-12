@@ -2,6 +2,7 @@
 public class Punkte
 {
     //Variable für den Punktestand
+    static int[] punkteSpieler = new int[8];
     static int allgemeinPunkte = 0;
     static int bonusPunkte = 0;
     //Methode für, wenn man die Punkte sehen will, ohne viel zu schreiben
