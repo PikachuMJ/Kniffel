@@ -96,24 +96,10 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 // rüberschicken der button availability zum AuswahlFenster
                 new AuswahlFenster();
             } else {
-                    //Stringbuilder zum Zusammenstellen der CHeckbox-Zustände
-                    //Anfangs text "Checkbox states:\n"
-                    StringBuilder result = new StringBuilder("Checkbox states:\n");
-                    for (int i = 0; i < checkBoxes.length; i++)
-                    {
-                        //Zustand der checkboxen wird in checkboxStates Array gespeichert
-                        checkboxStates[i] = checkBoxes[i].isSelected();
-                        //kein bock alle zu erklären also macht ki das kurz für mich :O
-                        //result.append("Auswahl ").append(i + 1).append(": ").append(checkboxStates[i]).append("\n");:
-                        // Hier werden verschiedene Zeichenketten an das StringBuilder-Objekt angehängt.
-                        // append fügt die angegebene Zeichenkette oder das angegebene Objekt am Ende der aktuellen Zeichenkette hinzu.
-                        // Der Text "Auswahl ", gefolgt von der Checkbox-Nummer und ihrem Zustand, wird hinzugefügt.
-                        result.append("Auswahl ").append(i + 1).append(": ").append(checkboxStates[i]).append("\n");
-                    }
+
                     //Messagebox mit den Checkbox-Zuständen anzeigen
                     if (buttonPressCount < 3)
-                    {
-                        JOptionPane.showMessageDialog(this, result.toString());
+                    {;
                         //wenn checkbox nicht ausgewählt ist, man diese Zahl also neuwürfeln will löst es aus
                         if (!checkboxStates[0])
                         {

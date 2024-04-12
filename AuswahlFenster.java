@@ -8,8 +8,6 @@ public class AuswahlFenster extends JFrame implements ActionListener
 {
     boolean bonusCheck = true;
     // Bilder für gewinner/verlierer (noch nicht benutzt)
-    static ImageIcon Win = new ImageIcon("win.png");
-    static ImageIcon Lose = new ImageIcon("lose.png");
     JButton[] buttons;
     boolean[] buttonAvailP1;
     boolean[] buttonAvailP2;
@@ -24,8 +22,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
     //constructor AuswahlFenster
     public AuswahlFenster()
     {
-        setTitle("Choose your category");
-        setSize(400, 300);
+        setTitle("Wähle eine Kategorie aus");
+        setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.buttonAvailP1 = Kniffel.buttonAvailP1;
@@ -84,7 +82,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                     break;
                 default:
                     // Handle unexpected case
-                    System.out.println("Invalid playerPlaying value: " + Kniffel.playerPlaying);
+                    System.out.println("Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
                     break;
             }
         }
@@ -94,30 +92,22 @@ public class AuswahlFenster extends JFrame implements ActionListener
         {
             add(button);
         }
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
     private boolean[] getCurrPlAv() {
-        switch (Kniffel.playerPlaying) {
-            case 1:
-                return buttonAvailP1;
-            case 2:
-                return buttonAvailP2;
-            case 3:
-                return buttonAvailP3;
-            case 4:
-                return buttonAvailP4;
-            case 5:
-                return buttonAvailP5;
-            case 6:
-                return buttonAvailP6;
-            case 7:
-                return buttonAvailP7;
-            case 8:
-                return buttonAvailP8;
-            default:
-                throw new IllegalStateException("Invalid playerPlaying value: " + Kniffel.playerPlaying);
-        }
+        return switch (Kniffel.playerPlaying) {
+            case 1 -> buttonAvailP1;
+            case 2 -> buttonAvailP2;
+            case 3 -> buttonAvailP3;
+            case 4 -> buttonAvailP4;
+            case 5 -> buttonAvailP5;
+            case 6 -> buttonAvailP6;
+            case 7 -> buttonAvailP7;
+            case 8 -> buttonAvailP8;
+            default -> throw new IllegalStateException("Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
+        };
     }
     public void actionPerformed(ActionEvent e)
     {
@@ -207,7 +197,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
         if (currPlayAvail[index])
         {
             //MessageDialog anzeigen + knopf deaktivieren
-            JOptionPane.showMessageDialog(this, "You selected " + clickedButton.getText());
+            JOptionPane.showMessageDialog(this, "Du hast " + clickedButton.getText()+ " ausgewählt :O");
             //knopf kann nicht mehr gedrückt werden (ausgegraut)
             currPlayAvail[index] = false;
             //Knopf verschwindet bzw gelöscht
@@ -232,11 +222,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
             System.out.println("Wie oft wurde der Knopf gedrückt: " + Kniffel.buttonPressCount2);
             if (Kniffel.buttonPressCount2 == Kniffel.cheesyBalls)
             {
-                JOptionPane.showMessageDialog(this, "Ergebnis: " + Punkte.getPunkteSpieler());
-                JOptionPane.showMessageDialog(null, "Gewinner :O", "Mikakika ", JOptionPane.PLAIN_MESSAGE, Win);
-                JOptionPane.showMessageDialog(null, "Verlierer :c", "Mikakika", JOptionPane.PLAIN_MESSAGE, Lose);
+                new ErgebnisFenster();
                 dispose();
-                System.exit(0);
             }
         } else {
             JOptionPane.showMessageDialog(this, "This option has already been chosen!");

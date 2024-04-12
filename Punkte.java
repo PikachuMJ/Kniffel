@@ -8,13 +8,13 @@ public class Punkte
     //Methode für, wenn man die Punkte sehen will, ohne viel zu schreiben
     static String getPunkteSpieler()
     {
-        return   punkteSpieler[0] + " " +
-                 punkteSpieler[1] + " " +
-                 punkteSpieler[2] + " " +
-                 punkteSpieler[3] + " " +
-                 punkteSpieler[4] + " " +
-                 punkteSpieler[5] + " " +
-                 punkteSpieler[6] + " " +
+        return   punkteSpieler[0] + "\n" +
+                 punkteSpieler[1] + "\n" +
+                 punkteSpieler[2] + "\n" +
+                 punkteSpieler[3] + "\n" +
+                 punkteSpieler[4] + "\n" +
+                 punkteSpieler[5] + "\n" +
+                 punkteSpieler[6] + "\n" +
                  punkteSpieler[7];
     }
     //Methode zum Hinzufügen von Punkten
