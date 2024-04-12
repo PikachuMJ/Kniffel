@@ -64,7 +64,8 @@ public class WuerfelFenster extends JFrame implements ActionListener
         System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
     }
     //Methode zum Aktualisieren der checkboxen damit immer die gewürfelten Zahlen angezeigt werden
-    void checkboxUpdate(int wuerfel1, int wuerfel2, int wuerfel3, int wuerfel4, int wuerfel5) {
+    void checkboxUpdate(int wuerfel1, int wuerfel2, int wuerfel3, int wuerfel4, int wuerfel5)
+    {
         // Aktualisieren der Texte der CheckBoxes
         checkBoxes[0].setText(String.valueOf(wuerfel1));
         checkBoxes[1].setText(String.valueOf(wuerfel2));

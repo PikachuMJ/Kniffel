@@ -3,7 +3,8 @@ import java.util.Arrays;
 
 public class ErgebnisFenster
 {
-    ErgebnisFenster() {
+    ErgebnisFenster()
+    {
         int[] erg = {Punkte.punkteSpieler[0],
                      Punkte.punkteSpieler[1],
                      Punkte.punkteSpieler[2],
@@ -15,11 +16,15 @@ public class ErgebnisFenster
         JOptionPane.showMessageDialog(null, "Und der gewinner ist/die gewinner sind......");
         Arrays.sort(erg);
         StringBuilder message = new StringBuilder();
-        for (int j = erg.length - 1; j >= erg.length - Kniffel.playerPlaying; j--) {
+        for (int j = erg.length - 1; j >= erg.length - Kniffel.playerPlaying; j--)
+        {
             int punkte = erg[j];
-            for (int i = 0; i < Punkte.punkteSpieler.length; i++) {
-                if (punkte == Punkte.punkteSpieler[i]) {
-                    String pName = switch (i) {
+            for (int i = 0; i < Punkte.punkteSpieler.length; i++)
+            {
+                if (punkte == Punkte.punkteSpieler[i])
+                {
+                    String pName = switch (i)
+                    {
                         //enhanced switch ist scheinbar wie ein normaler switch
                         // nur ohne breaks und allgemein übersichtlicher
                         case 0 -> Kniffel.p1Name;

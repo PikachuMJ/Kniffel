@@ -55,7 +55,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
             buttons[i].addActionListener(this);
             // Sichtbarkeit anhand buttonAvailability
             // (true oder false, wenn gedrückt einfach gesagt)
-            switch (Kniffel.playerPlaying) {
+            switch (Kniffel.playerPlaying)
+            {
                 case 1:
                     buttons[i].setVisible(Kniffel.buttonAvailP1[i]);
                     break;
@@ -97,7 +98,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
     }
 
     private boolean[] getCurrPlAv() {
-        return switch (Kniffel.playerPlaying) {
+        return switch (Kniffel.playerPlaying)
+        {
             case 1 -> buttonAvailP1;
             case 2 -> buttonAvailP2;
             case 3 -> buttonAvailP3;
@@ -179,7 +181,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 !buttonAvailP7[0] && !buttonAvailP7[1] && !buttonAvailP7[2] && !buttonAvailP7[3] && !buttonAvailP7[4] && !buttonAvailP7[5] && bonusCheck ||
                 !buttonAvailP8[0] && !buttonAvailP8[1] && !buttonAvailP8[2] && !buttonAvailP8[3] && !buttonAvailP8[4] && !buttonAvailP8[5] && bonusCheck)
         {
-            if(Punkte.bonusPunkteFinal >= 63) {
+            if(Punkte.bonusPunkteFinal >= 63)
+            {
                 Punkte.addPunkte(Punkte.bonusPunkteFinal);
             }
                 bonusCheck = false;
@@ -204,7 +207,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
             clickedButton.setVisible(false);
             //wenn noch mindestens eine möglichkeit zum Drücken existiert
             //wird nochmal gewürfelt bzw alles wiederholt
-            if (Kniffel.buttonPressCount2 < Kniffel.cheesyBalls) {
+            if (Kniffel.buttonPressCount2 < Kniffel.cheesyBalls)
+            {
                 WuerfelFenster.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel2 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel3 = ((int) ((Math.random()) * 6 + 1));

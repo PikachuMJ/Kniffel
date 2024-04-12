@@ -6,16 +6,19 @@ public class Punkte
     static int[] bonusPunkte = new int[8];
     static int bonusPunkteFinal = 0;
     //Methode zum Hinzufügen von Punkten
-    static void addPunkte(int addPunkte) {
+    static void addPunkte(int addPunkte)
+    {
         int playerIndex = Kniffel.playerPlaying - 1;
-        if (playerIndex >= 0 && playerIndex < punkteSpieler.length) {
+        if (playerIndex >= 0 && playerIndex < punkteSpieler.length)
+        {
             punkteSpieler[playerIndex] += addPunkte;
         }
     }
     static void addBonusPunkte(int punkte)
     {
         int playerIndex = Kniffel.playerPlaying - 1;
-        if (playerIndex >= 0 && playerIndex < bonusPunkte.length) {
+        if (playerIndex >= 0 && playerIndex < bonusPunkte.length)
+        {
             bonusPunkte[playerIndex] += punkte;
             bonusPunkteFinal += bonusPunkte[playerIndex];
 
