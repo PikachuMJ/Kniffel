@@ -94,7 +94,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 dispose();
                 Kniffel.buttonPressCount2++;
                 // rüberschicken der button availability zum AuswahlFenster
-                new AuswahlFenster(Kniffel.buttonAvailP1, Kniffel.buttonAvailP2);
+                new AuswahlFenster();
             } else {
                     //Stringbuilder zum Zusammenstellen der CHeckbox-Zustände
                     //Anfangs text "Checkbox states:\n"
@@ -140,7 +140,14 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Placeholder ausgabe
                 System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
-                System.out.println("Punkte: "+Punkte.allgemeinPunkte);
+                System.out.println( " Punkte Spieler 1: "+Punkte.punkteSpieler[0] + " \n"+
+                                    " Punkte Spieler 2: "+Punkte.punkteSpieler[1]+ "\n"+
+                                    " Punkte Spieler 3: "+Punkte.punkteSpieler[2]+ "\n"+
+                                    " Punkte Spieler 4: "+Punkte.punkteSpieler[3]+ "\n"+
+                                    " Punkte Spieler 5: "+Punkte.punkteSpieler[4]+ "\n"+
+                                    " Punkte Spieler 6: "+Punkte.punkteSpieler[5]+ "\n"+
+                                    " Punkte Spieler 7: "+Punkte.punkteSpieler[6]+ "\n"+
+                                    " Punkte Spieler 8: "+Punkte.punkteSpieler[7]);
             }
         }
     }

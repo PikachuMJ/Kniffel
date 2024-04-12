@@ -15,6 +15,7 @@ public class Check
             if (j == 1)
             {
                 Punkte.addPunkte(1);
+                Punkte.addBonusPunkte(1);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -28,6 +29,7 @@ public class Check
             if (j == 2)
             {
                 Punkte.addPunkte(2);
+                Punkte.addBonusPunkte(2);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -41,6 +43,7 @@ public class Check
             if (j == 3)
             {
                 Punkte.addPunkte(3);
+                Punkte.addBonusPunkte(3);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -54,6 +57,7 @@ public class Check
             if (j == 4)
             {
                 Punkte.addPunkte(4);
+                Punkte.addBonusPunkte(4);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -67,6 +71,7 @@ public class Check
             if (j == 5)
             {
                 Punkte.addPunkte(5);
+                Punkte.addBonusPunkte(5);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -80,6 +85,7 @@ public class Check
             if (j == 6)
             {
                 Punkte.addPunkte(6);
+                Punkte.addBonusPunkte(6);
             } else {
                 Punkte.addPunkte(0);
             }
