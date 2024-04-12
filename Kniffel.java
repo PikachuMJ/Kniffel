@@ -6,6 +6,7 @@ public class Kniffel
     //Array speichert Verfügbarkeit der Knöpfe in AuswahlFenster
     //  (hab bis jetzt keine bessere lösung gefunden)
     static int playerPlaying = 0;
+    static int maxPlayerCount = 0;
     static int cheesyBalls = 0;
     static boolean[] buttonAvailP1 = new boolean[13];
     static boolean[] buttonAvailP2 = new boolean[13];
@@ -31,6 +32,7 @@ public class Kniffel
                 playerPlaying = 0;
             }
         }while (playerPlaying < 1 || playerPlaying > 9);
+        maxPlayerCount = playerPlaying;
         //setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailP1, true);
         Arrays.fill(buttonAvailP2, true);
@@ -51,6 +53,7 @@ public class Kniffel
             case 7: cheesyBalls = 91; break;
             case 8: cheesyBalls = 104; break;
         }
+        playerPlaying = 1;
         new WuerfelFenster();
     }
 }

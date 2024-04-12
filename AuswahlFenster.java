@@ -220,11 +220,9 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 WuerfelFenster.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
-
-                if (Kniffel.playerPlaying >= Kniffel.playerPlaying + 1) {
+                Kniffel.playerPlaying++;
+                if (Kniffel.playerPlaying - 1 >= Kniffel.maxPlayerCount) {
                     Kniffel.playerPlaying = 1;
-                } else {
-                    Kniffel.playerPlaying++;
                 }
                 //Wiederholter Aufruf von WuerfelFenster
                 new WuerfelFenster();
