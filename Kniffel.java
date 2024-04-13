@@ -5,13 +5,13 @@ import javax.swing.*;
  * Kniffel
  *
  * @author MAP
- * @version 20240412.40
+ * @version 20240412.47
  */
 public class Kniffel
 {
     //Arrays speichern die namen der Spieler
     //und der einzelnen button availability
-    //cheesyBalls = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
+    //lidlLohntSich = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
     //passieren sollen bis etwas Bestimmtes auslöst
     static String p1Name = "";
     static String p2Name = "";
@@ -33,8 +33,8 @@ public class Kniffel
     static boolean[] buttonAvailP7 = new boolean[13];
     static boolean[] buttonAvailP8 = new boolean[13];
 
-    //speichert Anzahl der Knopfdrücke die in AuswahlFenster bzw Wuerfelfenster passieren
-    static int buttonPressCount2 = 0;
+    //speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
+    static int AusFenButCount = 0;
 
     public static void main(String[] kniffelDings)
     {
@@ -48,30 +48,30 @@ public class Kniffel
         ImageIcon namenEingabeSp6 = new ImageIcon("namenEingabe6.png");
         ImageIcon namenEingabeSp7 = new ImageIcon("namenEingabe7.png");
         ImageIcon namenEingabeSp8 = new ImageIcon("namenEingabe8.png");
-        int tolerance = 1;
+        int toleranz = 1;
         do
         {  //Einfache do schleife, zur auswahl der Spieler
             try
             {
                 //JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden
                 playerPlaying = Integer.parseInt((String)JOptionPane.showInputDialog(null,
-                        "Zu wievielt spielen sie? \n (maximal 8 Spieler",
-                        "Spieler Anzahl Eingabe", JOptionPane.PLAIN_MESSAGE, spielerAnzahl, null, ""));
+                        "Wie viele Spieler machen mit? \n (maximal 8 Spieler",
+                            "Spieler Anzahl Eingabe",
+                                  JOptionPane.PLAIN_MESSAGE, spielerAnzahl, null, ""));
             } catch (Exception e)
             {
-                if(tolerance > 3)
+                if(toleranz > 3)
                 {
                 System.exit(0);
                 }
-                JOptionPane.showMessageDialog(null,"Falsche Eingabe", "FehlerAusgabe", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,
+                        "Falsche Eingabe", "FehlerAusgabe", JOptionPane.ERROR_MESSAGE);
                 playerPlaying = 0;
-                tolerance++;
+                toleranz++;
             }
         }while (playerPlaying < 1 || playerPlaying > 8);
         //maxPLayer sind die ausgewählten spieler,
         //playerPlaying verändert sich ständig und ist
-        //deshalb für meine zwecke nicht unbedingt gut nutzbar
-        // (im Bereich der Vergleiche)
         maxPlayerCount = playerPlaying;
         //setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailP1, true);
@@ -89,60 +89,68 @@ public class Kniffel
         //nichts anderes wie buttonPressCount
         switch(playerPlaying)
         {
-            case 1: lidlLohntSich = 13; break;
-            case 2: lidlLohntSich = 26; break;
-            case 3: lidlLohntSich = 39; break;
-            case 4: lidlLohntSich = 52; break;
-            case 5: lidlLohntSich = 65; break;
-            case 6: lidlLohntSich = 78; break;
-            case 7: lidlLohntSich = 91; break;
-            case 8: lidlLohntSich = 104; break;
+            case 1 -> lidlLohntSich = 13;
+            case 2 -> lidlLohntSich = 26;
+            case 3 -> lidlLohntSich = 39;
+            case 4 -> lidlLohntSich = 52;
+            case 5 -> lidlLohntSich = 65;
+            case 6 -> lidlLohntSich = 78;
+            case 7 -> lidlLohntSich = 91;
+            case 8 -> lidlLohntSich = 104;
         }
             //spieler wird nach namen gefragt, wenn er mitmacht
             p1Name = (String) JOptionPane.showInputDialog(null,
                     "Spieler 1, geben sie Ihren Namen an",
-                    "Spieler 1 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp1, null, "");
+                        "Spieler 1 Namen Eingabe",
+                             JOptionPane.PLAIN_MESSAGE, namenEingabeSp1, null, "");
         if(playerPlaying > 1)
         {
             p2Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 2, geben sie Ihren Namen an",
-                    "Spieler 2 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp2, null, "");
+                        "Spieler 2 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp2, null, "");
         }
         if(playerPlaying > 2)
         {
             p3Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 3, geben sie Ihren Namen an",
-                    "Spieler 3 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp3, null, "");
+                        "Spieler 3 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp3, null, "");
         }
         if(playerPlaying > 3)
         {
             p4Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 4, geben sie Ihren Namen an",
-                    "Spieler 4 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp4, null, "");
+                        "Spieler 4 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp4, null, "");
         }
         if(playerPlaying > 4)
         {
             p5Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 5, geben sie Ihren Namen an",
-                    "Spieler 5 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp5, null, "");
+                        "Spieler 5 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp5, null, "");
         }
         if(playerPlaying > 5)
         {
             p6Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 6, geben sie Ihren Namen an",
-                    "Spieler 6 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp6, null, "");
+                        "Spieler 6 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp6, null, "");
         }
         if(playerPlaying > 6)
         {
             p7Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 7, geben sie Ihren Namen an",
-                    "Spieler 7 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp7, null, "");
+                        "Spieler 7 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp7, null, "");
         }
         if(playerPlaying > 7)
         {
             p8Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 8, geben sie Ihren Namen an",
-                    "Spieler 8 Namen Eingabe", JOptionPane.PLAIN_MESSAGE, namenEingabeSp8, null, "");
+                        "Spieler 8 Namen Eingabe",
+                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp8, null, "");
         }
         //Player wird auf 1 gesetzt, damit auch der erste anfängt
         playerPlaying = 1;

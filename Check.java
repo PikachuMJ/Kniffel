@@ -106,7 +106,11 @@ public class Check
         {
             if (zaehlerstand >= 3)
             {
-                Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+                Punkte.addPunkte(sortiert[0] +
+                                    sortiert[1] +
+                                    sortiert[2] +
+                                    sortiert[3] +
+                                    sortiert[4]);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -125,7 +129,11 @@ public class Check
         {
             if (zaehlerstand >= 4)
             {
-                Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+                Punkte.addPunkte(sortiert[0] +
+                                    sortiert[1] +
+                                    sortiert[2] +
+                                    sortiert[3] +
+                                    sortiert[4]);
             } else {
                 Punkte.addPunkte(0);
             }
@@ -248,6 +256,10 @@ public class Check
     //Method zum Gucken Chance, also alles addiert
     static void chance(int[] sortiert)
     {
-        Punkte.addPunkte(sortiert[0] + sortiert[1] + sortiert[2] + sortiert[3] + sortiert[4]);
+        Punkte.addPunkte(sortiert[0]
+                            + sortiert[1]
+                            + sortiert[2]
+                            + sortiert[3]
+                            + sortiert[4]);
     }
 }

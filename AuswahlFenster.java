@@ -54,38 +54,26 @@ public class AuswahlFenster extends JFrame implements ActionListener
             // Sichtbarkeit anhand buttonAvailability
             //je nachdem welcher spieler spielt, wird etwas anderes benutzt
             boolean keinFehler = true;
-            do {
-                switch (Kniffel.playerPlaying) {
-                    case 1:
-                        buttons[i].setVisible(Kniffel.buttonAvailP1[i]);
-                        break;
-                    case 2:
-                        buttons[i].setVisible(Kniffel.buttonAvailP2[i]);
-                        break;
-                    case 3:
-                        buttons[i].setVisible(Kniffel.buttonAvailP3[i]);
-                        break;
-                    case 4:
-                        buttons[i].setVisible(Kniffel.buttonAvailP4[i]);
-                        break;
-                    case 5:
-                        buttons[i].setVisible(Kniffel.buttonAvailP5[i]);
-                        break;
-                    case 6:
-                        buttons[i].setVisible(Kniffel.buttonAvailP6[i]);
-                        break;
-                    case 7:
-                        buttons[i].setVisible(Kniffel.buttonAvailP7[i]);
-                        break;
-                    case 8:
-                        buttons[i].setVisible(Kniffel.buttonAvailP8[i]);
-                        break;
-                    default:
+            do
+            {
+                switch (Kniffel.playerPlaying)
+                {
+                    case 1 -> buttons[i].setVisible(Kniffel.buttonAvailP1[i]);
+                    case 2 ->buttons[i].setVisible(Kniffel.buttonAvailP2[i]);
+                    case 3 ->buttons[i].setVisible(Kniffel.buttonAvailP3[i]);
+                    case 4 ->buttons[i].setVisible(Kniffel.buttonAvailP4[i]);
+                    case 5 ->buttons[i].setVisible(Kniffel.buttonAvailP5[i]);
+                    case 6 ->buttons[i].setVisible(Kniffel.buttonAvailP6[i]);
+                    case 7 ->buttons[i].setVisible(Kniffel.buttonAvailP7[i]);
+                    case 8 ->buttons[i].setVisible(Kniffel.buttonAvailP8[i]);
+                    default ->
+                    {
                         // falls irgendwas falsch laufen sollte (was eig nicht passiert)
                         // wird sich drum gekümmert
-                        System.out.println("Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
+                        System.out.println(
+                                "Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
                         keinFehler = false;
-                        break;
+                    }
                 }
             } while (!keinFehler);
         }
@@ -99,7 +87,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
         setVisible(true);
     }
 
-    private boolean[] getCurrPlAvail() {
+    private boolean[] getCurrPlAvail()
+    {
         return switch (Kniffel.playerPlaying)
         {
             case 1 -> buttonAvailP1;
@@ -110,7 +99,13 @@ public class AuswahlFenster extends JFrame implements ActionListener
             case 6 -> buttonAvailP6;
             case 7 -> buttonAvailP7;
             case 8 -> buttonAvailP8;
-            default -> throw new IllegalStateException("Unerwarteter Wert " + Kniffel.playerPlaying);
+            /*
+                gibt eine Exception aus,
+                wenn einer der oberen Werte nicht existiert
+                was bei einem richtigen ablauf nicht passieren sollte
+            */
+            default -> throw new IllegalStateException(
+                    "Unerwarteter Wert " + Kniffel.playerPlaying);
         };
     }
     public void actionPerformed(ActionEvent e)
@@ -119,7 +114,11 @@ public class AuswahlFenster extends JFrame implements ActionListener
         JButton clickedButton = (JButton) e.getSource();
         int index = -1;
         //überprüft welcher knopf gedrückt wurde, um die nötigen klauseln auszuführen
-        int[] sortiert = {WuerfelFenster.wuerfel1, WuerfelFenster.wuerfel2, WuerfelFenster.wuerfel3, WuerfelFenster.wuerfel4, WuerfelFenster.wuerfel5};
+        int[] sortiert = {WuerfelFenster.wuerfel1,
+                            WuerfelFenster.wuerfel2,
+                            WuerfelFenster.wuerfel3,
+                            WuerfelFenster.wuerfel4,
+                            WuerfelFenster.wuerfel5};
         Arrays.sort(sortiert);
         if (clickedButton == buttons[0])
         {
@@ -288,7 +287,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
             clickedButton.setVisible(false);
             //Es wird so lange wiederholt
             //bis jeder Knopf unsichtbar ist
-            if (Kniffel.buttonPressCount2 < Kniffel.lidlLohntSich)
+            if (Kniffel.AusFenButCount < Kniffel.lidlLohntSich)
             {
                 WuerfelFenster.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel2 = ((int) ((Math.random()) * 6 + 1));
@@ -308,7 +307,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 dispose();
             }
             //wenn alle knöpfe, gedrückt wurden, öffnet sich das ErgebnisFenster
-            if (Kniffel.buttonPressCount2 == Kniffel.lidlLohntSich)
+            if (Kniffel.AusFenButCount == Kniffel.lidlLohntSich)
             {
                 new ErgebnisFenster();
                 dispose();

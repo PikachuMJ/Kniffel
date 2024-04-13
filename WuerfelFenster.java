@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class WuerfelFenster extends JFrame implements ActionListener
 {
-    //Bilder für checkbox (Hacken und X)
-    ImageIcon wBildC = new ImageIcon("checkbox.png");
+    //Bilder für checkbox (Haken und X)
+    ImageIcon haken = new ImageIcon("checkbox.png");
     ImageIcon X = new ImageIcon("X.png");
     static int wuerfel1 = ((int)((Math.random()) * 6 + 1));
     static int wuerfel2 = ((int)((Math.random()) * 6 + 1));
@@ -13,7 +13,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     static int wuerfel4 = ((int)((Math.random()) * 6 + 1));
     static int wuerfel5 = ((int)((Math.random()) * 6 + 1));
     JCheckBox[] checkBoxes;
-    JButton evaluateButton;
+    JButton auswertButton;
     boolean[] checkboxStates;
     int buttonPressCount;
     public AnimierteBorder animierteBorder;
@@ -22,8 +22,8 @@ public class WuerfelFenster extends JFrame implements ActionListener
     //constructor für WuerfelFenster
     public WuerfelFenster()
     {
-        setTitle("Wähle aus was du behalten willst");
-        setSize(400, 400);
+        setTitle("Wähle aus, was du behalten willst");
+        setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //checkboxen werden initialisiert
@@ -37,12 +37,12 @@ public class WuerfelFenster extends JFrame implements ActionListener
         for (JCheckBox box : checkBoxes)
         {
             box.setIcon(X);
-            box.setSelectedIcon(wBildC);
+            box.setSelectedIcon(haken);
         }
 
         //erstellung des knopfes
-        evaluateButton = new JButton("Neu würfeln/Weiter");
-        evaluateButton.addActionListener(this);
+        auswertButton = new JButton("Neu würfeln/Weiter");
+        auswertButton.addActionListener(this);
         //panels für checkboxen und Knopf erstellen
         JPanel checkBoxPanel = new JPanel(new GridLayout(1, 2));
         for (JCheckBox checkBox : checkBoxes)
@@ -51,21 +51,22 @@ public class WuerfelFenster extends JFrame implements ActionListener
         }
         //FlowLayout weil faul
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(evaluateButton);
-        //mainPanel erstellen und alles nötige hinzufügen
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.add(checkBoxPanel, BorderLayout.CENTER);
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        buttonPanel.add(auswertButton);
+        //hauptPanel erstellen und alles nötige hinzufügen
+        JPanel hauptPanel = new JPanel(new BorderLayout());
+        hauptPanel.add(checkBoxPanel, BorderLayout.CENTER);
+        hauptPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        animierteBorder = new AnimierteBorder(Color.RED, 3);
-        mainPanel.setBorder(animierteBorder);
-        //mainPanel zum frame hinzufügen + in der Mitte des Bildschirms + sichtbar
-        add(mainPanel);
+        animierteBorder = new AnimierteBorder(Color.RED, 5);
+        hauptPanel.setBorder(animierteBorder);
+        //hauptPanel zum frame hinzufügen + in der Mitte des Bildschirms + sichtbar
+        add(hauptPanel);
         setLocationRelativeTo(null);
         //Timer aus dem internet :O
-        animationTimer = new Timer(100, e -> {
+        animationTimer = new Timer(100, e ->
+        {
             animierteBorder.nextColor();
-            mainPanel.repaint();
+            hauptPanel.repaint();
         });
         animationTimer.start();
 
@@ -91,7 +92,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         //Überprüft, ob der Knopf gedrückt wurde bzw welcher knopf gedrückt wurde. Kann ja auch ein anderer sein
-        if (e.getSource() == evaluateButton)
+        if (e.getSource() == auswertButton)
         {
             //erhöht wie oft der Knopf gedrückt wurde
             buttonPressCount++;
@@ -100,28 +101,18 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 //je nachdem wer spielt, wird eine andere Nachricht angezeigt
                 if(Kniffel.maxPlayerCount == 1 && Kniffel.playerPlaying == 1)
                 {
-                    evaluateButton.setText("Runde " +  (Kniffel.buttonPressCount2 + 1) + " abgeschlossen");
-                } else if (Kniffel.playerPlaying == 1)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p2Name);
-                }else if  (Kniffel.playerPlaying == 2)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p3Name);
-                }else if (Kniffel.playerPlaying == 3)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p4Name);
-                }else if (Kniffel.playerPlaying == 4)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p5Name);
-                }else if (Kniffel.playerPlaying == 5)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p6Name);
-                }else if (Kniffel.playerPlaying == 6)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p7Name);
-                }else if (Kniffel.playerPlaying == 7)
-                {
-                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p8Name);
+                    auswertButton.setText("Runde " +  (Kniffel.AusFenButCount + 1) + " abgeschlossen");
+                } else {
+
+                    switch (Kniffel.playerPlaying) {
+                        case 1 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p2Name);
+                        case 2 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p3Name);
+                        case 3 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p4Name);
+                        case 4 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p5Name);
+                        case 5 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p6Name);
+                        case 6 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p7Name);
+                        case 7 -> auswertButton.setText("Nächster Spieler: " + Kniffel.p8Name);
+                    }
                 }
             }
             //wenn der knopf 3-mal gedrückt wurde
@@ -130,7 +121,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 //schließt das Fenster, fügt einen button press für die Knöpfe von AuswahlFenster
                 //und AuswahlFenster wird geöffnet
                 dispose();
-                Kniffel.buttonPressCount2++;
+                Kniffel.AusFenButCount++;
                 new AuswahlFenster();
             } else {
                     if (buttonPressCount < 3)
@@ -161,7 +152,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Wahrscheinlich lasse ich die ausgabe so bis ich was Besseres finde
                 System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
-                System.out.println( " Punkte "+Kniffel.p1Name+ " "+Punkte.punkteSpieler[0] + " \n"+
+                System.out.println( " Punkte "+Kniffel.p1Name+ " "+Punkte.punkteSpieler[0]+"\n"+
                                     " Punkte "+Kniffel.p2Name+ " "+Punkte.punkteSpieler[1]+ "\n"+
                                     " Punkte "+Kniffel.p3Name+ " "+Punkte.punkteSpieler[2]+ "\n"+
                                     " Punkte "+Kniffel.p4Name+ " "+Punkte.punkteSpieler[3]+ "\n"+

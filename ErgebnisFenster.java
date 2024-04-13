@@ -17,7 +17,7 @@ public class ErgebnisFenster
                      Punkte.punkteSpieler[5],
                      Punkte.punkteSpieler[6],
                      Punkte.punkteSpieler[7]};
-        //Als aufbaut so das man nicht aus Versehen wegklickt
+        //Als aufbau so das man nicht aus Versehen wegklickt
         JOptionPane.showMessageDialog(null, "Und der gewinner ist/die gewinner sind......");
         //Array wird offensichtlich sortiert
         Arrays.sort(erg);
