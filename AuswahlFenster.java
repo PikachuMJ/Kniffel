@@ -110,7 +110,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
             case 6 -> buttonAvailP6;
             case 7 -> buttonAvailP7;
             case 8 -> buttonAvailP8;
-            default -> throw new IllegalStateException("Unexpected value: " + Kniffel.playerPlaying);
+            default -> throw new IllegalStateException("Unerwarteter Wert " + Kniffel.playerPlaying);
         };
     }
     public void actionPerformed(ActionEvent e)
@@ -277,8 +277,11 @@ public class AuswahlFenster extends JFrame implements ActionListener
         //schaut ob der bzw ein knopf noch gedrückt werden kann
         if (currPlayAvail[index])
         {
-            //MessageDialog anzeigen + knopf deaktivieren
-            JOptionPane.showMessageDialog(this, "Du hast " + clickedButton.getText()+ " ausgewählt :O");
+            /*MessageDialog anzeigen + knopf deaktivieren
+            * Allgemein dafür gedacht, um spieler zu zeigen, was er ausgewählt hat,
+            * wenn er sich nicht sicher ist
+            */
+            JOptionPane.showMessageDialog(this, "Du hast " + clickedButton.getText()+ " ausgewählt");
             //knopf kann nicht mehr gedrückt werden (ausgegraut)
             currPlayAvail[index] = false;
             //Knopf verschwindet bzw gelöscht

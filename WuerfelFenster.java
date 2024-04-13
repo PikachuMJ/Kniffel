@@ -97,8 +97,32 @@ public class WuerfelFenster extends JFrame implements ActionListener
             buttonPressCount++;
             if (buttonPressCount == 2)
             {
-                //Text vom Knopf ändert sich nach dem dritten wurf
-                evaluateButton.setText("Beenden");
+                //je nachdem wer spielt, wird eine andere Nachricht angezeigt
+                if(Kniffel.maxPlayerCount == 1 && Kniffel.playerPlaying == 1)
+                {
+                    evaluateButton.setText("Runde " +  (Kniffel.buttonPressCount2 + 1) + " abgeschlossen");
+                } else if (Kniffel.playerPlaying == 1)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p2Name);
+                }else if  (Kniffel.playerPlaying == 2)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p3Name);
+                }else if (Kniffel.playerPlaying == 3)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p4Name);
+                }else if (Kniffel.playerPlaying == 4)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p5Name);
+                }else if (Kniffel.playerPlaying == 5)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p6Name);
+                }else if (Kniffel.playerPlaying == 6)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p7Name);
+                }else if (Kniffel.playerPlaying == 7)
+                {
+                    evaluateButton.setText("Nächster Spieler: " +Kniffel.p8Name);
+                }
             }
             //wenn der knopf 3-mal gedrückt wurde
             if (buttonPressCount == 3)
