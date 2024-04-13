@@ -23,7 +23,7 @@ public class Kniffel
     static String p8Name = "";
     static int playerPlaying = 0;
     static int maxPlayerCount = 0;
-    static int cheesyBalls = 0;
+    static int lidlLohntSich = 0;
     static boolean[] buttonAvailP1 = new boolean[13];
     static boolean[] buttonAvailP2 = new boolean[13];
     static boolean[] buttonAvailP3 = new boolean[13];
@@ -69,14 +69,14 @@ public class Kniffel
         //nichts anderes wie buttonPressCount
         switch(playerPlaying)
         {
-            case 1: cheesyBalls = 13; break;
-            case 2: cheesyBalls = 26; break;
-            case 3: cheesyBalls = 39; break;
-            case 4: cheesyBalls = 52; break;
-            case 5: cheesyBalls = 65; break;
-            case 6: cheesyBalls = 78; break;
-            case 7: cheesyBalls = 91; break;
-            case 8: cheesyBalls = 104; break;
+            case 1: lidlLohntSich = 13; break;
+            case 2: lidlLohntSich = 26; break;
+            case 3: lidlLohntSich = 39; break;
+            case 4: lidlLohntSich = 52; break;
+            case 5: lidlLohntSich = 65; break;
+            case 6: lidlLohntSich = 78; break;
+            case 7: lidlLohntSich = 91; break;
+            case 8: lidlLohntSich = 104; break;
         }
         //spieler wird nach namen gefragt, wenn er mitmacht
         p1Name = JOptionPane.showInputDialog("Spieler 1, geben sie ihren Namen an (oder was anderes)");

@@ -50,6 +50,6 @@ public class ErgebnisFenster
             }
         }
         //Ausgabe von allem
-        JOptionPane.showMessageDialog(null, message.toString(), "Ende :O", JOptionPane.PLAIN_MESSAGE,endBild);
+        JOptionPane.showMessageDialog(null, message.toString(), "Ende :O", JOptionPane.PLAIN_MESSAGE, endBild);
     }
 }

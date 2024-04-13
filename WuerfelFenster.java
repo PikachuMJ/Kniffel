@@ -16,6 +16,9 @@ public class WuerfelFenster extends JFrame implements ActionListener
     JButton evaluateButton;
     boolean[] checkboxStates;
     int buttonPressCount;
+    public AnimierteBorder animierteBorder;
+    public
+    Timer animationTimer;
     //constructor für WuerfelFenster
     public WuerfelFenster()
     {
@@ -53,9 +56,19 @@ public class WuerfelFenster extends JFrame implements ActionListener
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(checkBoxPanel, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+        animierteBorder = new AnimierteBorder(Color.RED, 3);
+        mainPanel.setBorder(animierteBorder);
         //mainPanel zum frame hinzufügen + in der Mitte des Bildschirms + sichtbar
         add(mainPanel);
         setLocationRelativeTo(null);
+        //Timer aus dem internet :O
+        animationTimer = new Timer(100, e -> {
+            animierteBorder.nextColor();
+            mainPanel.repaint();
+        });
+        animationTimer.start();
+
         setVisible(true);
 
         //Checkbox zustände erstellen

@@ -285,7 +285,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
             clickedButton.setVisible(false);
             //Es wird so lange wiederholt
             //bis jeder Knopf unsichtbar ist
-            if (Kniffel.buttonPressCount2 < Kniffel.cheesyBalls)
+            if (Kniffel.buttonPressCount2 < Kniffel.lidlLohntSich)
             {
                 WuerfelFenster.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel2 = ((int) ((Math.random()) * 6 + 1));
@@ -305,7 +305,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 dispose();
             }
             //wenn alle knöpfe, gedrückt wurden, öffnet sich das ErgebnisFenster
-            if (Kniffel.buttonPressCount2 == Kniffel.cheesyBalls)
+            if (Kniffel.buttonPressCount2 == Kniffel.lidlLohntSich)
             {
                 new ErgebnisFenster();
                 dispose();
