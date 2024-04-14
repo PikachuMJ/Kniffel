@@ -3,16 +3,18 @@ import javax.swing.*;
 
 /**
  * Kniffel
+ * lidlLohntSich = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
+ * Es gibt wahrscheinlich mehrere if klauseln, die man
+ * verbessern könnte, es soll aber erstmal gut funktionieren
+ *
  *
  * @author MAP
- * @version 20240412.47
+ * @version 20240406.53
  */
 public class Kniffel
 {
     //Arrays speichern die namen der Spieler
     //und der einzelnen button availability
-    //lidlLohntSich = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
-    //passieren sollen bis etwas Bestimmtes auslöst
     static String p1Name = "";
     static String p2Name = "";
     static String p3Name = "";
