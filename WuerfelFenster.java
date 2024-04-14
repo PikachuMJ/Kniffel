@@ -62,6 +62,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
         add(hauptPanel);
         setLocationRelativeTo(null);
         //Timer aus dem internet :O
+        //hab noch nicht ganz verstanden wie diese border funktioniert
         animationTimer = new Timer(20, e ->
         {
             animierteBorder.nextColor();

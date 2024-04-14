@@ -6,7 +6,7 @@ public class ErgebnisFenster
     ErgebnisFenster()
     {
         ImageIcon endBild = new ImageIcon("end.png");
-        /*alle Punkte dem einzelnen Spiel werden gespeichert
+        /* alle Punkte dem einzelnen Spiel werden gespeichert
          * zum schnell abholen
          */
         int[] erg = {Punkte.punkteSpieler[0],

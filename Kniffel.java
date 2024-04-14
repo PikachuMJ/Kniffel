@@ -10,7 +10,7 @@ import javax.swing.*;
  * ist was anderes :O aber lerne ja noch
  *
  * @author MAP
- * @version 20240406.53
+ * @version 20240406.69
  */
 public class Kniffel
 {
@@ -48,8 +48,9 @@ public class Kniffel
                 new ImageIcon("namenEingabe8.png")
         };
         int toleranz = 1;
+        //Einfache do schleife, zur auswahl der Spieler
         do
-        {  //Einfache do schleife, zur auswahl der Spieler
+        {
             try
             {
                 //JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden. kp wieso
