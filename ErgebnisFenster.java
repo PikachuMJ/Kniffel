@@ -34,14 +34,14 @@ public class ErgebnisFenster
                     {
                         //enhanced switch ist scheinbar wie ein normaler switch
                         // nur ohne breaks und allgemein übersichtlicher
-                        case 0 -> Kniffel.p1Name;
-                        case 1 -> Kniffel.p2Name;
-                        case 2 -> Kniffel.p3Name;
-                        case 3 -> Kniffel.p4Name;
-                        case 4 -> Kniffel.p5Name;
-                        case 5 -> Kniffel.p6Name;
-                        case 6 -> Kniffel.p7Name;
-                        default -> Kniffel.p8Name;
+                        case 0 -> Kniffel.pNames[0];
+                        case 1 -> Kniffel.pNames[1];
+                        case 2 -> Kniffel.pNames[2];
+                        case 3 -> Kniffel.pNames[3];
+                        case 4 -> Kniffel.pNames[4];
+                        case 5 -> Kniffel.pNames[5];
+                        case 6 -> Kniffel.pNames[6];
+                        default -> Kniffel.pNames[7];
                     };
                     //unten wird allgemein alles zusammen gefasst, Punkte, namen, reihenfolge
                     message.append(pName).append(": ").append(punkte).append(" Punkte").append("\n");

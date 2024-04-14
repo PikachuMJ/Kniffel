@@ -76,21 +76,21 @@ public class WuerfelFenster extends JFrame implements ActionListener
         buttonPressCount = 0;
         //sysout je nach Spieler
         switch (Kniffel.playerPlaying) {
-            case 1 -> System.out.println("Würfel von " + Kniffel.p1Name + ": " +
+            case 1 -> System.out.println("Würfel von " + Kniffel.pNames[0] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 2 -> System.out.println("Würfel von " + Kniffel.p2Name + ": " +
+            case 2 -> System.out.println("Würfel von " + Kniffel.pNames[1] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 3 -> System.out.println("Würfel von " + Kniffel.p3Name + ": " +
+            case 3 -> System.out.println("Würfel von " + Kniffel.pNames[2] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 4 -> System.out.println("Würfel von " + Kniffel.p4Name + ": " +
+            case 4 -> System.out.println("Würfel von " + Kniffel.pNames[3] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 5 -> System.out.println("Würfel von " + Kniffel.p5Name + ": " +
+            case 5 -> System.out.println("Würfel von " + Kniffel.pNames[4] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 6 -> System.out.println("Würfel von " + Kniffel.p6Name + ": " +
+            case 6 -> System.out.println("Würfel von " + Kniffel.pNames[5] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 7 -> System.out.println("Würfel von " + Kniffel.p7Name + ": " +
+            case 7 -> System.out.println("Würfel von " + Kniffel.pNames[6] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 8 -> System.out.println("Würfel von " + Kniffel.p8Name + ": " +
+            case 8 -> System.out.println("Würfel von " + Kniffel.pNames[7] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
             }
     }
@@ -164,21 +164,21 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Wahrscheinlich lasse ich die ausgabe so bis ich was Besseres finde
                 switch (Kniffel.playerPlaying) {
-                    case 1 -> System.out.println("Würfel von " + Kniffel.p1Name + ": " +
+                    case 1 -> System.out.println("Würfel von " + Kniffel.pNames[0] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 2 -> System.out.println("Würfel von " + Kniffel.p2Name + ": " +
+                    case 2 -> System.out.println("Würfel von " + Kniffel.pNames[1] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 3 -> System.out.println("Würfel von " + Kniffel.p3Name + ": " +
+                    case 3 -> System.out.println("Würfel von " + Kniffel.pNames[2] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 4 -> System.out.println("Würfel von " + Kniffel.p4Name + ": " +
+                    case 4 -> System.out.println("Würfel von " + Kniffel.pNames[3] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 5 -> System.out.println("Würfel von " + Kniffel.p5Name + ": " +
+                    case 5 -> System.out.println("Würfel von " + Kniffel.pNames[4] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 6 -> System.out.println("Würfel von " + Kniffel.p6Name + ": " +
+                    case 6 -> System.out.println("Würfel von " + Kniffel.pNames[5] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 7 -> System.out.println("Würfel von " + Kniffel.p7Name + ": " +
+                    case 7 -> System.out.println("Würfel von " + Kniffel.pNames[6] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-                    case 8 -> System.out.println("Würfel von " + Kniffel.p8Name + ": " +
+                    case 8 -> System.out.println("Würfel von " + Kniffel.pNames[7] + ": " +
                             wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
                 }
                 StringBuilder punkteAusgabe = new StringBuilder();
@@ -187,14 +187,14 @@ public class WuerfelFenster extends JFrame implements ActionListener
                     //gibt, die punkte aller spieler aus. nicht vorhandene Spieler werden ignoriert bzw nicht ausgegeben
                     String playerName = switch (i)
                     {
-                        case 0 -> Kniffel.p1Name;
-                        case 1 -> Kniffel.p2Name;
-                        case 2 -> Kniffel.p3Name;
-                        case 3 -> Kniffel.p4Name;
-                        case 4 -> Kniffel.p5Name;
-                        case 5 -> Kniffel.p6Name;
-                        case 6 -> Kniffel.p7Name;
-                        case 7 -> Kniffel.p8Name;
+                        case 0 -> Kniffel.pNames[0];
+                        case 1 -> Kniffel.pNames[1];
+                        case 2 -> Kniffel.pNames[2];
+                        case 3 -> Kniffel.pNames[3];
+                        case 4 -> Kniffel.pNames[4];
+                        case 5 -> Kniffel.pNames[5];
+                        case 6 -> Kniffel.pNames[6];
+                        case 7 -> Kniffel.pNames[7];
                         default -> "Fehler";
                     };
                     punkteAusgabe.append(" Punkte ").append(playerName).append(" ").append(Punkte.punkteSpieler[i]).append("\n");
