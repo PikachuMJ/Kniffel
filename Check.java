@@ -1,5 +1,5 @@
-//Methoden zum Überprüfen aller kategorien in Kniffel
-/*  erklärung zur for each schleife, da ich sie hier oft benutze
+/*Methoden zum Überprüfen aller kategorien in Kniffel
+ *  erklärung zur for each schleife, da ich sie hier oft benutze
  *  allgemeine syntax: for (Datentyp element : sammlung)
  * bei einem array mit zb 5 zahlen
  * und einem syntax mit for (int zahl : array) { System.out.println(zahl); }

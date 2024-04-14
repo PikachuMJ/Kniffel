@@ -1,4 +1,5 @@
 //enthält Punktestand
+//enthält bonusPunkte
 public class Punkte
 {
     static boolean bonusCheck1 = true;
