@@ -298,7 +298,8 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 Kniffel.playerPlaying++;
                 //wenn der Spieler höher als die am anfang, angeforderte
                 //SpielerZahl ist, wird sie wieder auf den ernsten gesetzt
-                if (Kniffel.playerPlaying - 1 >= Kniffel.maxPlayerCount) {
+                if (Kniffel.playerPlaying - 1 >= Kniffel.maxPlayerCount)
+                {
                     Kniffel.playerPlaying = 1;
                 }
                 //Wiederholter Aufruf von WuerfelFenster

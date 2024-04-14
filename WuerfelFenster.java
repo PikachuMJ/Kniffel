@@ -75,7 +75,8 @@ public class WuerfelFenster extends JFrame implements ActionListener
         checkboxStates = new boolean[5];
         buttonPressCount = 0;
         //sysout je nach Spieler
-        switch (Kniffel.playerPlaying) {
+        switch (Kniffel.playerPlaying)
+        {
             case 1 -> System.out.println("Würfel von " + Kniffel.pNames[0] + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
             case 2 -> System.out.println("Würfel von " + Kniffel.pNames[1] + ": " +

@@ -35,7 +35,8 @@ public class Kniffel
     {
         ImageIcon spielerAnzahl   = new ImageIcon("spielerAnzahl.png");
 
-        ImageIcon[] namenEingabeBilder = new ImageIcon[] {
+        ImageIcon[] namenEingabeBilder = new ImageIcon[]
+                {
                 new ImageIcon("namenEingabe1.png"),
                 new ImageIcon("namenEingabe2.png"),
                 new ImageIcon("namenEingabe3.png"),
@@ -97,14 +98,16 @@ public class Kniffel
             case 8 -> lidlLohntSich = 104;
         }
         // wird durch die player gelooped, und nach namen gefragt
-        for (int i = 0; i < playerPlaying; i++) {
+        for (int i = 0; i < playerPlaying; i++)
+        {
             String playerName = (String) JOptionPane.showInputDialog(null,
                     "Spieler " + (i + 1) + ", geben sie Ihren Namen an",
                     "Spieler " + (i + 1) + " Namen Eingabe",
                     // Bild je nach spieler
                     JOptionPane.PLAIN_MESSAGE, namenEingabeBilder[i], null, "");
             // Wenn der Name leer ist, wird der Name NULL + spielerZahl gesetzt
-            if (playerName == null) {
+            if (playerName == null)
+            {
                 playerName = "NULL_" + (i + 1);
             }
             // Name wird hinzugefügt :O
