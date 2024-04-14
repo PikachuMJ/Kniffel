@@ -75,6 +75,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
         //Checkbox zustände erstellen
         checkboxStates = new boolean[5];
         buttonPressCount = 0;
+        //sysout je nach Spieler
         switch(Kniffel.playerPlaying)
         {
             case 1 -> System.out.println("Würfel von "+Kniffel.p1Name+ ": " +
