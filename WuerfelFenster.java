@@ -17,8 +17,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     boolean[] checkboxStates;
     int buttonPressCount;
     public AnimierteBorder animierteBorder;
-    public
-    Timer animationTimer;
+    public Timer animationTimer;
     //constructor für WuerfelFenster
     public WuerfelFenster()
     {

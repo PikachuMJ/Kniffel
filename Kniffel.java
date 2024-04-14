@@ -105,12 +105,18 @@ public class Kniffel
                     "Spieler 1, geben sie Ihren Namen an",
                         "Spieler 1 Namen Eingabe",
                              JOptionPane.PLAIN_MESSAGE, namenEingabeSp1, null, "");
+            if(p1Name == null){
+                p1Name = "NULL_1";
+            }
         if(playerPlaying > 1)
         {
             p2Name = (String)JOptionPane.showInputDialog(null,
                     "Spieler 2, geben sie Ihren Namen an",
                         "Spieler 2 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp2, null, "");
+            if(p2Name == null){
+                p2Name = "NULL_2";
+            }
         }
         if(playerPlaying > 2)
         {
@@ -118,6 +124,9 @@ public class Kniffel
                     "Spieler 3, geben sie Ihren Namen an",
                         "Spieler 3 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp3, null, "");
+            if(p3Name == null){
+                p3Name = "NULL_3";
+            }
         }
         if(playerPlaying > 3)
         {
@@ -125,6 +134,9 @@ public class Kniffel
                     "Spieler 4, geben sie Ihren Namen an",
                         "Spieler 4 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp4, null, "");
+            if(p4Name == null){
+                p4Name = "NULL_4";
+            }
         }
         if(playerPlaying > 4)
         {
@@ -132,6 +144,9 @@ public class Kniffel
                     "Spieler 5, geben sie Ihren Namen an",
                         "Spieler 5 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp5, null, "");
+            if(p5Name == null){
+                p5Name = "NULL_5";
+            }
         }
         if(playerPlaying > 5)
         {
@@ -139,6 +154,9 @@ public class Kniffel
                     "Spieler 6, geben sie Ihren Namen an",
                         "Spieler 6 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp6, null, "");
+            if(p6Name == null){
+                p6Name = "NULL_6";
+            }
         }
         if(playerPlaying > 6)
         {
@@ -146,6 +164,9 @@ public class Kniffel
                     "Spieler 7, geben sie Ihren Namen an",
                         "Spieler 7 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp7, null, "");
+            if(p7Name == null){
+                p7Name = "NULL_7";
+            }
         }
         if(playerPlaying > 7)
         {
@@ -153,6 +174,9 @@ public class Kniffel
                     "Spieler 8, geben sie Ihren Namen an",
                         "Spieler 8 Namen Eingabe",
                               JOptionPane.PLAIN_MESSAGE, namenEingabeSp8, null, "");
+            if(p8Name == null){
+                p8Name = "NULL_8";
+            }
         }
         //Player wird auf 1 gesetzt, damit auch der erste anfängt
         playerPlaying = 1;
