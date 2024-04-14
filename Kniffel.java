@@ -10,7 +10,7 @@ import javax.swing.*;
  * ist was anderes :O aber lerne ja noch
  *
  * @author MAP
- * @version 20240406.69
+ * @version 20240406.70
  */
 public class Kniffel
 {
