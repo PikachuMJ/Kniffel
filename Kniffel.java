@@ -14,8 +14,8 @@ import javax.swing.*;
  */
 public class Kniffel
 {
-    //Arrays speichern die namen der Spieler
-    //und der einzelnen button availability
+    // Arrays speichern die namen der Spieler
+    // und der einzelnen button availability
     static String[] pNames = new String[8];
     static int playerPlaying = 0;
     static int maxPlayerCount = 0;
@@ -29,7 +29,7 @@ public class Kniffel
     static boolean[] buttonAvailP7 = new boolean[13];
     static boolean[] buttonAvailP8 = new boolean[13];
 
-    //speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
+    // speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
     static int AusFenButCount = 0;
 
     public static void main(String[] kniffelDings)
@@ -48,12 +48,12 @@ public class Kniffel
                 new ImageIcon("namenEingabe8.png")
         };
         int toleranz = 1;
-        //Einfache do schleife, zur auswahl der Spieler
+        // Einfache do schleife, zur auswahl der Spieler
         do
         {
             try
             {
-                //JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden. kp wieso
+                // JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden. kp wieso
                 playerPlaying = Integer.parseInt((String)JOptionPane.showInputDialog(null,
                         "Wie viele Spieler machen mit? \n (maximal 8 Spieler",
                             "Spieler Anzahl Eingabe",
@@ -70,10 +70,10 @@ public class Kniffel
                 toleranz++;
             }
         }while (playerPlaying < 1 || playerPlaying > 8);
-        //maxPLayer sind die ausgewählten spieler,
-        //playerPlaying verändert sich ständig und ist
+        // maxPLayer sind die ausgewählten spieler,
+        // playerPlaying verändert sich ständig und ist
         maxPlayerCount = playerPlaying;
-        //setzt alle knöpfe als verfügbar
+        // setzt alle knöpfe als verfügbar
         Arrays.fill(buttonAvailP1, true);
         Arrays.fill(buttonAvailP2, true);
         Arrays.fill(buttonAvailP3, true);
@@ -82,12 +82,13 @@ public class Kniffel
         Arrays.fill(buttonAvailP6, true);
         Arrays.fill(buttonAvailP7, true);
         Arrays.fill(buttonAvailP8, true);
-        /*je nach anzahl der spieler
-        *müssen verschieden viele
-        *knopf drücke passieren.
-        *btw den namen hat sich ein Freund von mir ausgedacht :O
-        *nichts anderes wie buttonPressCount
-        */
+        /*
+         *je nach anzahl der spieler
+         *müssen verschieden viele
+         *knopf drücke passieren.
+         *btw den namen hat sich ein Freund von mir ausgedacht :O
+         *nichts anderes wie buttonPressCount
+         */
         switch(playerPlaying)
         {
             case 1 -> lidlLohntSich = 13;
@@ -115,7 +116,7 @@ public class Kniffel
             // Name wird hinzugefügt :O
             pNames[i] = playerName;
         }
-        //Player wird auf 1 gesetzt, damit auch der erste anfängt
+        // Player wird auf 1 gesetzt, damit auch der erste anfängt
         playerPlaying = 1;
         new WuerfelFenster();
     }

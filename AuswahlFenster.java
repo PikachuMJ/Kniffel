@@ -15,15 +15,12 @@ public class AuswahlFenster extends JFrame implements ActionListener
     boolean[] buttonAvailP6;
     boolean[] buttonAvailP7;
     boolean[] buttonAvailP8;
-
-
-    //constructor AuswahlFenster
     public AuswahlFenster()
     {
         setTitle("Wähle eine Kategorie aus");
         setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //Übertragung der buttonAvailability
+        // Übertragung der buttonAvailability
         this.buttonAvailP1 = Kniffel.buttonAvailP1;
 		this.buttonAvailP2 = Kniffel.buttonAvailP2;
         this.buttonAvailP3 = Kniffel.buttonAvailP3;
@@ -32,7 +29,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
         this.buttonAvailP6 = Kniffel.buttonAvailP6;
         this.buttonAvailP7 = Kniffel.buttonAvailP7;
         this.buttonAvailP8 = Kniffel.buttonAvailP8;
-        //erstellen der Knöpfe
+        // erstellen der Knöpfe
         buttons     = new JButton[13];
         buttons[0]  = new JButton("Einser");
         buttons[1]  = new JButton("Zweier");
@@ -47,12 +44,14 @@ public class AuswahlFenster extends JFrame implements ActionListener
         buttons[10] = new JButton("Große Straße");
         buttons[11] = new JButton("Kniffel");
         buttons[12] = new JButton("Chance");
-        //ActionListender jedem knopf hinzufügen
+        // ActionListender jedem knopf hinzufügen
         for (int i = 0; i < buttons.length; i++)
         {
             buttons[i].addActionListener(this);
-            // Sichtbarkeit anhand buttonAvailability
-            //je nachdem welcher spieler spielt, wird etwas anderes benutzt
+            /*
+             * Sichtbarkeit anhand buttonAvailability
+             * je nachdem welcher spieler spielt, wird etwas anderes benutzt
+             */
             boolean keinFehler = true;
             do
             {
@@ -68,8 +67,10 @@ public class AuswahlFenster extends JFrame implements ActionListener
                     case 8 ->buttons[i].setVisible(Kniffel.buttonAvailP8[i]);
                     default ->
                     {
-                        // falls irgendwas falsch laufen sollte (was eig nicht passiert)
-                        // wird sich drum gekümmert
+                        /*
+                         * falls irgendwas falsch laufen sollte (was eig nicht passiert)
+                         * wird sich drum gekümmert
+                         */
                         System.out.println(
                                 "Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
                         keinFehler = false;
@@ -77,7 +78,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 }
             } while (!keinFehler);
         }
-        //Layout für knöpfe
+        // Layout für knöpfe
         setLayout(new GridLayout(13, 1));
         for (JButton button : buttons)
         {
@@ -110,10 +111,10 @@ public class AuswahlFenster extends JFrame implements ActionListener
     }
     public void actionPerformed(ActionEvent e)
     {
-        //Der gedrückte Knopf wird zu clickedButton hinzugefügt (man weiß von außen nicht welcher knopf es ist)
+        // Der gedrückte Knopf wird zu clickedButton hinzugefügt (man weiß von außen nicht welcher knopf es ist)
         JButton clickedButton = (JButton) e.getSource();
         int index = -1;
-        //überprüft welcher knopf gedrückt wurde, um die nötigen klauseln auszuführen
+        // überprüft welcher knopf gedrückt wurde, um die nötigen klauseln auszuführen
         int[] sortiert = {WuerfelFenster.wuerfel1,
                             WuerfelFenster.wuerfel2,
                             WuerfelFenster.wuerfel3,
@@ -172,15 +173,15 @@ public class AuswahlFenster extends JFrame implements ActionListener
         {
             Check.chance(sortiert);
         }
-        //guckt welcher spieler die ersten 6 knöpfe gedrückt hat
+        // guckt welcher spieler die ersten 6 knöpfe gedrückt hat
         if(     !buttonAvailP1[0] && !buttonAvailP1[1] &&
                 !buttonAvailP1[2] && !buttonAvailP1[3] &&
                 !buttonAvailP1[4] && !buttonAvailP1[5] &&
                 Punkte.bonusCheck1)
         {
-            //wenn die ersten 6 knöpfe, gedrückt wurden,
-            // wird die erreichte punktzahl überprüft
-            if(Punkte.bonusPunkteFinal >= 63)
+            /* wenn die ersten 6 knöpfe, gedrückt wurden,
+             * wird die erreichte punktzahl überprüft
+             */
             {
                 Punkte.addPunkte(Punkte.bonusPunkteFinal);
             }
@@ -273,20 +274,22 @@ public class AuswahlFenster extends JFrame implements ActionListener
             }
         }
         boolean[] currPlayAvail = getCurrPlAvail();
-        //schaut ob der bzw ein knopf noch gedrückt werden kann
+        // schaut ob der bzw ein knopf noch gedrückt werden kann
         if (currPlayAvail[index])
         {
-            /*MessageDialog anzeigen + knopf deaktivieren
-            * Allgemein dafür gedacht, um spieler zu zeigen, was er ausgewählt hat,
-            * wenn er sich nicht sicher ist
-            */
+            /*
+             *  MessageDialog anzeigen + knopf deaktivieren
+             * Allgemein dafür gedacht, um spieler zu zeigen, was er ausgewählt hat,
+             * wenn er sich nicht sicher ist
+             */
             JOptionPane.showMessageDialog(this, "Du hast " + clickedButton.getText()+ " ausgewählt");
-            //knopf kann nicht mehr gedrückt werden (ausgegraut)
+            // knopf kann nicht mehr gedrückt werden (ausgegraut)
             currPlayAvail[index] = false;
-            //Knopf verschwindet bzw gelöscht
+            // Knopf verschwindet bzw gelöscht
             clickedButton.setVisible(false);
-            //Es wird so lange wiederholt
-            //bis jeder Knopf unsichtbar ist
+            /* Es wird so lange wiederholt
+             * bis jeder Knopf unsichtbar ist
+             */
             if (Kniffel.AusFenButCount < Kniffel.lidlLohntSich)
             {
                 WuerfelFenster.wuerfel1 = ((int) ((Math.random()) * 6 + 1));
@@ -294,27 +297,28 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 WuerfelFenster.wuerfel3 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel4 = ((int) ((Math.random()) * 6 + 1));
                 WuerfelFenster.wuerfel5 = ((int) ((Math.random()) * 6 + 1));
-                //Spieler wird gewechselt
+                // Spieler wird gewechselt
                 Kniffel.playerPlaying++;
-                //wenn der Spieler höher als die am anfang, angeforderte
-                //SpielerZahl ist, wird sie wieder auf den ernsten gesetzt
+                /* wenn der Spieler höher als die am anfang, angeforderte
+                 * SpielerZahl ist, wird sie wieder auf den ernsten gesetzt
+                 */
                 if (Kniffel.playerPlaying - 1 >= Kniffel.maxPlayerCount)
                 {
                     Kniffel.playerPlaying = 1;
                 }
-                //Wiederholter Aufruf von WuerfelFenster
+                // Wiederholter Aufruf von WuerfelFenster
                 new WuerfelFenster();
-                //Dieses Fenster wird geschlossen
+                // Dieses Fenster wird geschlossen
                 dispose();
             }
-            //wenn alle knöpfe, gedrückt wurden, öffnet sich das ErgebnisFenster
+            // wenn alle knöpfe, gedrückt wurden, öffnet sich das ErgebnisFenster
             if (Kniffel.AusFenButCount == Kniffel.lidlLohntSich)
             {
                 new ErgebnisFenster();
                 dispose();
             }
         } else {
-            //Passiert eigentlich nicht aber kann zeigen, wenn bestimmte werte nicht funktionieren
+            // Passiert eigentlich nicht aber kann zeigen, wenn bestimmte werte nicht funktionieren
             JOptionPane.showMessageDialog(this, "Diese Option wurde schon benutzt");
         }
     }

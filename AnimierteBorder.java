@@ -11,7 +11,7 @@ public class AnimierteBorder implements Border {
     }
 
     @Override
-    //basically erstellt die border drum rum
+    // basically erstellt die border drum rum
     public void paintBorder(Component c, Graphics g, int x, int y, int breite, int hoehe) {
         // Berechnet die Farben
         Color obenFarbe = farbeAnpassung(farbe, -20);
@@ -44,13 +44,13 @@ public class AnimierteBorder implements Border {
     }
 
     @Override
-    //einfach gesagt sagt es aus wie breit die border ist
+    // einfach gesagt sagt es aus wie breit die border ist
     public Insets getBorderInsets(Component c) {
         return new Insets(breite, breite, breite, breite);
     }
 
     @Override
-    //macht nichts, wegen dem interface muss sie aber trotzdem da sein
+    // macht nichts, wegen dem interface muss sie aber trotzdem da sein
     public boolean isBorderOpaque() {
         return true;
     }
@@ -60,9 +60,8 @@ public class AnimierteBorder implements Border {
         int r = farbe.getRed();
         int g = farbe.getGreen();
         int b = farbe.getBlue();
-
         /*
-         *guckt welche Farbe höher, und welche niedriger
+         * guckt welche Farbe höher, und welche niedriger
          * gemacht werden muss.
          */
         if (r == 255 && g < 255 && b == 0) {
@@ -91,11 +90,9 @@ public class AnimierteBorder implements Border {
                 b -= 5;
             }
         }
-
         r = Math.min(Math.max(r, 0), 255);
         g = Math.min(Math.max(g, 0), 255);
         b = Math.min(Math.max(b, 0), 255);
-
         // Farben update
         farbe = new Color(r, g, b);
     }

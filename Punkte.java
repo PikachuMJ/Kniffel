@@ -1,5 +1,7 @@
-//enthält Punktestand
-//enthält bonusPunkte
+/*
+ * enthält Punktestand
+ * enthält bonusPunkte
+ */
 public class Punkte
 {
     static boolean bonusCheck1 = true;
@@ -10,14 +12,14 @@ public class Punkte
     static boolean bonusCheck6 = true;
     static boolean bonusCheck7 = true;
     static boolean bonusCheck8 = true;
-    //Variable für den Punktestand
+    // Variable für den Punktestand
     static int[] punkteSpieler = new int[8];
     static int[] bonusPunkte = new int[8];
     static int bonusPunkteFinal = 0;
-    //Methode zum Hinzufügen von Punkten
+    // Methode zum Hinzufügen von Punkten
     static void addPunkte(int addPunkte)
     {
-        //überprüft welcher Spieler die Punkte bekommen soll
+        // überprüft welcher Spieler die Punkte bekommen soll
         int playerIndex = Kniffel.playerPlaying - 1;
         if (playerIndex >= 0 && playerIndex < punkteSpieler.length)
         {

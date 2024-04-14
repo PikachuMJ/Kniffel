@@ -6,7 +6,8 @@ public class ErgebnisFenster
     ErgebnisFenster()
     {
         ImageIcon endBild = new ImageIcon("end.png");
-        /* alle Punkte dem einzelnen Spiel werden gespeichert
+        /*
+         * alle Punkte dem einzelnen Spiel werden gespeichert
          * zum schnell abholen
          */
         int[] erg = {Punkte.punkteSpieler[0],
@@ -17,11 +18,11 @@ public class ErgebnisFenster
                      Punkte.punkteSpieler[5],
                      Punkte.punkteSpieler[6],
                      Punkte.punkteSpieler[7]};
-        //Als aufbau so das man nicht aus Versehen wegklickt
+        // Als aufbau so das man nicht aus Versehen wegklickt
         JOptionPane.showMessageDialog(null, "Und der gewinner ist/die gewinner sind......");
-        //Array wird offensichtlich sortiert
+        // Array wird offensichtlich sortiert
         Arrays.sort(erg);
-        //StringBuild wird erstellt
+        // StringBuild wird erstellt
         StringBuilder message = new StringBuilder();
         for (int j = erg.length - 1; j >= erg.length - Kniffel.playerPlaying; j--)
         {
@@ -32,8 +33,9 @@ public class ErgebnisFenster
                 {
                     String pName = switch (i)
                     {
-                        //enhanced switch ist scheinbar wie ein normaler switch
-                        // nur ohne breaks und allgemein übersichtlicher
+                        /* enhanced switch ist scheinbar wie ein normaler switch
+                         *  nur ohne breaks und allgemein übersichtlicher
+                         */
                         case 0 -> Kniffel.pNames[0];
                         case 1 -> Kniffel.pNames[1];
                         case 2 -> Kniffel.pNames[2];
@@ -43,13 +45,13 @@ public class ErgebnisFenster
                         case 6 -> Kniffel.pNames[6];
                         default -> Kniffel.pNames[7];
                     };
-                    //unten wird allgemein alles zusammen gefasst, Punkte, namen, reihenfolge
+                    // unten wird allgemein alles zusammen gefasst, Punkte, namen, reihenfolge
                     message.append(pName).append(": ").append(punkte).append(" Punkte").append("\n");
                     break;
                 }
             }
         }
-        //Ausgabe von allem
+        // Ausgabe von allem
         JOptionPane.showMessageDialog(null, message.toString(), "Ende :O", JOptionPane.PLAIN_MESSAGE, endBild);
     }
 }

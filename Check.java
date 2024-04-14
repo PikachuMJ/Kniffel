@@ -1,17 +1,20 @@
-/*Methoden zum Überprüfen aller kategorien in Kniffel
+/*
+ *  Methoden zum Überprüfen aller kategorien in Kniffel
  *  erklärung zur for each schleife, da ich sie hier oft benutze
  *  allgemeine syntax: for (Datentyp element : sammlung)
- * bei einem array mit zb 5 zahlen
- * und einem syntax mit for (int zahl : array) { System.out.println(zahl); }
- * würden alle werte von dem array nacheinander ausgegeben werden
+ *  bei einem array mit zb 5 zahlen
+ *  und einem syntax mit for (int zahl : array) { System.out.println(zahl); }
+ *  würden alle werte von dem array nacheinander ausgegeben werden
  */
 public class Check
 {
-    //Method zum Gucken Einser
+    // Method zum Gucken Einser
     static void einser(int[] sortiert)
     {
-        //j nimmt nach einander jeden wert
-        // von sortiert an und vergleicht sie mit 1
+        /*
+         *j nimmt nach einander jeden wert
+         *von sortiert an und vergleicht sie mit 1
+         */
         for (int j : sortiert)
         {
             if (j == 1)
@@ -23,7 +26,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Zweier
+    // Method zum Gucken Zweier
     static void zweier(int[] sortiert)
     {
         for (int j : sortiert)
@@ -37,7 +40,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Dreier
+    // Method zum Gucken Dreier
     static void dreier(int[] sortiert)
     {
         for (int j : sortiert)
@@ -51,7 +54,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Vierer
+    // Method zum Gucken Vierer
     static void vierer(int[] sortiert)
     {
         for (int j : sortiert)
@@ -65,7 +68,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Fuenfer
+    // Method zum Gucken Fuenfer
     static void fuenfer(int[] sortiert)
     {
         for (int j : sortiert)
@@ -79,7 +82,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Sechser
+    // Method zum Gucken Sechser
     static void sechser(int[] sortiert)
     {
         for (int j : sortiert)
@@ -93,7 +96,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken Dreierpasch
+    // Method zum Gucken Dreierpasch
     static void dreierpasch(int[] sortiert)
     {
         int[] zaehler = new int[6];
@@ -116,7 +119,7 @@ public class Check
             }
         }
     }
-    //Method zum GuckenViererpasch
+    // Method zum GuckenViererpasch
     static void viererpasch(int[] sortiert)
     {
         int[] zaehler = new int[6];
@@ -139,7 +142,7 @@ public class Check
             }
         }
     }
-    //Method zum Gucken FullHouse
+    // Method zum Gucken FullHouse
     static void fullHouse(int[] sortiert)
     {
         int[] zaehler = new int[6];
@@ -169,7 +172,7 @@ public class Check
             Punkte.addPunkte(0);
         }
     }
-    //Method zum Gucken kleine Straße
+    // Method zum Gucken kleine Straße
     static void kleineStrasse(int[] sortiert)
     {
         boolean kleineStrasseGefunden = false;
@@ -180,9 +183,11 @@ public class Check
             if (sortiert[i] + 1 == sortiert[i + 1])
             {
                 aufeiCount++;
-                // wenn 4 aufeinanderfolgende Zahlen gefunden wurden, wird
-                // die Schleife abgebrochen. Ja es funktioniert
-                // war am anfang bissel skeptisch
+                /*
+                 * wenn 4 aufeinanderfolgende Zahlen gefunden wurden, wird
+                 * die Schleife abgebrochen. Ja es funktioniert
+                 * war am anfang bissel skeptisch
+                 */
                 if (aufeiCount >= 4)
                 {
                     kleineStrasseGefunden = true;
@@ -204,7 +209,7 @@ public class Check
         }
     }
 
-    //Method zum Gucken große Straße
+    // Method zum Gucken große Straße
     static void grosseStrasse(int[] sortiert)
     {
         // Gehe von Wahrheit aus, wird nach gegenargument gesucht
@@ -232,7 +237,7 @@ public class Check
             Punkte.addPunkte(0);
         }
     }
-    //Method zum Gucken Kniffel
+    // Method zum Gucken Kniffel
     static void kniffel(int[] sortiert)
     {
         int[] zaehler = new int[6];
@@ -253,7 +258,7 @@ public class Check
         }
 
     }
-    //Method zum Gucken Chance, also alles addiert
+    // Method zum Gucken Chance, also alles addiert
     static void chance(int[] sortiert)
     {
         Punkte.addPunkte(sortiert[0]
