@@ -56,13 +56,13 @@ public class WuerfelFenster extends JFrame implements ActionListener
         hauptPanel.add(checkBoxPanel, BorderLayout.CENTER);
         hauptPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        animierteBorder = new AnimierteBorder(Color.RED, 5);
+        animierteBorder = new AnimierteBorder(Color.RED, 2);
         hauptPanel.setBorder(animierteBorder);
         //hauptPanel zum frame hinzufügen + in der Mitte des Bildschirms + sichtbar
         add(hauptPanel);
         setLocationRelativeTo(null);
         //Timer aus dem internet :O
-        animationTimer = new Timer(100, e ->
+        animationTimer = new Timer(20, e ->
         {
             animierteBorder.nextColor();
             hauptPanel.repaint();
