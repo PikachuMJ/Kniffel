@@ -4,7 +4,7 @@ import javax.swing.*;
 /**
  * Kniffel
  * lidlLohntSich = Anzahl der Knopfdrücke die im AuswahlFenster passieren bzw
- * Es gibt wahrscheinlich mehrere if klauseln, die man
+ * es gibt wahrscheinlich mehrere if klauseln, die man
  * verbessern könnte, es soll aber erstmal gut funktionieren
  *
  *
