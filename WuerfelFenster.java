@@ -76,25 +76,24 @@ public class WuerfelFenster extends JFrame implements ActionListener
         checkboxStates = new boolean[5];
         buttonPressCount = 0;
         //sysout je nach Spieler
-        switch(Kniffel.playerPlaying)
-        {
-            case 1 -> System.out.println("Würfel von "+Kniffel.p1Name+ ": " +
+        switch (Kniffel.playerPlaying) {
+            case 1 -> System.out.println("Würfel von " + Kniffel.p1Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 2 -> System.out.println("Würfel von "+Kniffel.p2Name+ ": " +
+            case 2 -> System.out.println("Würfel von " + Kniffel.p2Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 3 -> System.out.println("Würfel von "+Kniffel.p3Name+ ": " +
+            case 3 -> System.out.println("Würfel von " + Kniffel.p3Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 4 -> System.out.println("Würfel von "+Kniffel.p4Name+ ": " +
+            case 4 -> System.out.println("Würfel von " + Kniffel.p4Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 5 -> System.out.println("Würfel von "+Kniffel.p5Name+ ": " +
+            case 5 -> System.out.println("Würfel von " + Kniffel.p5Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 6 -> System.out.println("Würfel von "+Kniffel.p6Name+ ": " +
+            case 6 -> System.out.println("Würfel von " + Kniffel.p6Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 7 -> System.out.println("Würfel von "+Kniffel.p7Name+ ": " +
+            case 7 -> System.out.println("Würfel von " + Kniffel.p7Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-            case 8 -> System.out.println("Würfel von "+Kniffel.p8Name+ ": " +
+            case 8 -> System.out.println("Würfel von " + Kniffel.p8Name + ": " +
                     wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
-        }
+            }
     }
     //Methode zum Aktualisieren der checkboxen damit immer die gewürfelten Zahlen angezeigt werden
     void checkboxUpdate(int wuerfel1, int wuerfel2, int wuerfel3, int wuerfel4, int wuerfel5)
@@ -126,7 +125,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 {
                     auswertButton.setText("Runde " +  (Kniffel.AusFenButCount + 1) + " abgeschlossen");
                 } else {
-                        auswertButton.setText("Wählen Sie aus, was Sie haben wollen");
+                        auswertButton.setText("Finale würfel");
                 }
             }
             //wenn der knopf 3-mal gedrückt wurde
@@ -165,7 +164,24 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 //Checkbox mit neuen werten aktualisieren, damit auch immer die aktuellen Zahlen angezeigt werden
                 checkboxUpdate(wuerfel1, wuerfel2, wuerfel3, wuerfel4, wuerfel5);
                 //Wahrscheinlich lasse ich die ausgabe so bis ich was Besseres finde
-                System.out.println("Würfel: "+wuerfel1+" "+wuerfel2+" "+wuerfel3+" "+wuerfel4+" "+ wuerfel5);
+                switch (Kniffel.playerPlaying) {
+                    case 1 -> System.out.println("Würfel von " + Kniffel.p1Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 2 -> System.out.println("Würfel von " + Kniffel.p2Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 3 -> System.out.println("Würfel von " + Kniffel.p3Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 4 -> System.out.println("Würfel von " + Kniffel.p4Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 5 -> System.out.println("Würfel von " + Kniffel.p5Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 6 -> System.out.println("Würfel von " + Kniffel.p6Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 7 -> System.out.println("Würfel von " + Kniffel.p7Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                    case 8 -> System.out.println("Würfel von " + Kniffel.p8Name + ": " +
+                            wuerfel1 + " " + wuerfel2 + " " + wuerfel3 + " " + wuerfel4 + " " + wuerfel5);
+                }
                 StringBuilder punkteAusgabe = new StringBuilder();
                 for (int i = 0; i < Kniffel.maxPlayerCount; i++)
                 {
