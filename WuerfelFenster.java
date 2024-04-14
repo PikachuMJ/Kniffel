@@ -94,6 +94,9 @@ public class WuerfelFenster extends JFrame implements ActionListener
         //Überprüft, ob der Knopf gedrückt wurde bzw welcher knopf gedrückt wurde. Kann ja auch ein anderer sein
         if (e.getSource() == auswertButton)
         {
+            for (int i = 0; i < checkBoxes.length; i++) {
+                checkboxStates[i] = checkBoxes[i].isSelected();
+            }
             //erhöht wie oft der Knopf gedrückt wurde
             buttonPressCount++;
             if (buttonPressCount == 2)
