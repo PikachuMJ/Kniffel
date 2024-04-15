@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class WuerfelFenster extends JFrame implements ActionListener
 {
     // Bilder für checkbox (Haken und X)
@@ -14,7 +15,6 @@ public class WuerfelFenster extends JFrame implements ActionListener
     static int wuerfel5 = ((int)((Math.random()) * 6 + 1));
     JCheckBox[] checkBoxes;
     JButton ffButton;
-    boolean[] aufgeben = new boolean[8];
     JButton auswertButton;
     boolean[] checkboxStates;
     int buttonPressCount;
@@ -24,12 +24,13 @@ public class WuerfelFenster extends JFrame implements ActionListener
     {
     do
     {
-        if(aufgeben[Kniffel.playerPlaying - 1] == true)
+        if(Kniffel.aufgeben[Kniffel.playerPlaying - 1])
         {
          Kniffel.playerPlaying++;
+            dispose();
+            new WuerfelFenster();
         }
-    }while(aufgeben[Kniffel.playerPlaying] == true);
-        Arrays.fill(aufgeben, false);
+    }while(Kniffel.aufgeben[Kniffel.playerPlaying]);
         setTitle("Wähle aus, was du behalten willst");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -225,16 +226,18 @@ public class WuerfelFenster extends JFrame implements ActionListener
         {
          switch(Kniffel.playerPlaying)
          {
-             case 1 -> aufgeben[0] = true;
-             case 2 -> aufgeben[1] = true;
-             case 3 -> aufgeben[2] = true;
-             case 4 -> aufgeben[3] = true;
-             case 5 -> aufgeben[4] = true;
-             case 6 -> aufgeben[5] = true;
-             case 7 -> aufgeben[6] = true;
-             case 8 -> aufgeben[7] = true;
+             case 1 -> Kniffel.aufgeben[0] = true;
+             case 2 -> Kniffel.aufgeben[1] = true;
+             case 3 -> Kniffel.aufgeben[2] = true;
+             case 4 -> Kniffel.aufgeben[3] = true;
+             case 5 -> Kniffel.aufgeben[4] = true;
+             case 6 -> Kniffel.aufgeben[5] = true;
+             case 7 -> Kniffel.aufgeben[6] = true;
+             case 8 -> Kniffel.aufgeben[7] = true;
          }
           Kniffel.playerPlaying++;
+         dispose();
+         new WuerfelFenster();
         }
     }
 }

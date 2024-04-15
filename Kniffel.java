@@ -10,7 +10,7 @@ import javax.swing.*;
  * ist was anderes :O aber lerne ja noch
  *
  * @author MAP
- * @version 20240406.70
+ * @version 20240406.75
  */
 public class Kniffel
 {
@@ -28,12 +28,14 @@ public class Kniffel
     static boolean[] buttonAvailP6 = new boolean[13];
     static boolean[] buttonAvailP7 = new boolean[13];
     static boolean[] buttonAvailP8 = new boolean[13];
+    static boolean[] aufgeben = new boolean[8];
 
     // speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
     static int AusFenButCount = 0;
 
     public static void main(String[] kniffelDings)
     {
+        Arrays.fill(Kniffel.aufgeben, false);
         ImageIcon spielerAnzahl   = new ImageIcon("spielerAnzahl.png");
 
         ImageIcon[] namenEingabeBilder = new ImageIcon[]
