@@ -24,7 +24,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     {
     do
     {
-        if(aufgeben[Kniffel.playerPlaying] == true)
+        if(aufgeben[Kniffel.playerPlaying - 1] == true)
         {
          Kniffel.playerPlaying++;
         }
