@@ -22,6 +22,14 @@ public class WuerfelFenster extends JFrame implements ActionListener
     public Timer animationTimer;
     public WuerfelFenster()
     {
+    do
+    {
+        if(aufgeben[Kniffel.playerPlaying] == true)
+        {
+         Kniffel.playerPlaying++;
+        }
+    }while(aufgeben[Kniffel.playerPlaying] == true);
+        Arrays.fill(aufgeben, false);
         setTitle("Wähle aus, was du behalten willst");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -217,9 +225,16 @@ public class WuerfelFenster extends JFrame implements ActionListener
         {
          switch(Kniffel.playerPlaying)
          {
-             case 1 -> aufgeben
+             case 1 -> aufgeben[0] = true;
+             case 2 -> aufgeben[1] = true;
+             case 3 -> aufgeben[2] = true;
+             case 4 -> aufgeben[3] = true;
+             case 5 -> aufgeben[4] = true;
+             case 6 -> aufgeben[5] = true;
+             case 7 -> aufgeben[6] = true;
+             case 8 -> aufgeben[7] = true;
          }
-            
+          Kniffel.playerPlaying++;
         }
     }
 }
