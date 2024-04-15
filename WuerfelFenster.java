@@ -14,6 +14,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     static int wuerfel5 = ((int)((Math.random()) * 6 + 1));
     JCheckBox[] checkBoxes;
     JButton ffButton;
+    boolean[] aufgeben = new boolean[8];
     JButton auswertButton;
     boolean[] checkboxStates;
     int buttonPressCount;
@@ -211,6 +212,14 @@ public class WuerfelFenster extends JFrame implements ActionListener
                 }
                 System.out.println(punkteAusgabe);
             }
+        } 
+        if (e.getSource()==ffButton)
+        {
+         switch(Kniffel.playerPlaying)
+         {
+             case 1 -> aufgeben
+         }
+            
         }
     }
 }
