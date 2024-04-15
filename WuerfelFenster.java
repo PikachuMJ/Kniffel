@@ -13,6 +13,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
     static int wuerfel4 = ((int)((Math.random()) * 6 + 1));
     static int wuerfel5 = ((int)((Math.random()) * 6 + 1));
     JCheckBox[] checkBoxes;
+    JButton ffButton;
     JButton auswertButton;
     boolean[] checkboxStates;
     int buttonPressCount;
@@ -38,9 +39,12 @@ public class WuerfelFenster extends JFrame implements ActionListener
             box.setSelectedIcon(haken);
         }
 
-        // erstellung des knopfes
+        // erstellung des auswert knopfes
         auswertButton = new JButton("Neu würfeln/Weiter");
         auswertButton.addActionListener(this);
+        // Erstellung des aufgeben knopfes
+        ffButton = new JButton("aufgeben");
+        ffButton.addActionListener(this);
         // panels für checkboxen und Knopf erstellen
         JPanel checkBoxPanel = new JPanel(new GridLayout(1, 2));
         for (JCheckBox checkBox : checkBoxes)
@@ -50,6 +54,7 @@ public class WuerfelFenster extends JFrame implements ActionListener
         // FlowLayout weil faul
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(auswertButton);
+        buttonPanel.add(ffButton);
         // hauptPanel erstellen und alles nötige hinzufügen
         JPanel hauptPanel = new JPanel(new BorderLayout());
         hauptPanel.add(checkBoxPanel, BorderLayout.CENTER);
