@@ -13,7 +13,7 @@ public class StartMenu implements ActionListener
     ImageIcon regelnBild = new ImageIcon("kniffelRegeln.png");
         public StartMenu()
         {
-            menu.setTitle("Willkommen zum Spiel Kniffel");
+            menu.setTitle(":O");
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             startButton.setFocusable(false);
@@ -37,9 +37,9 @@ public class StartMenu implements ActionListener
             panelExit.add(exitButton);
 
             JLabel textLabel = new JLabel("Willkommen zu Kniffel!");
-            textLabel.setSize(500, 200);
+            textLabel.setSize(500, 150);
             textLabel.setHorizontalAlignment(JLabel.CENTER);
-            textLabel.setFont(new Font("Monospace", Font.PLAIN, 30));
+            textLabel.setFont(new Font("Monospace", Font.PLAIN, 40));
             textLabel.setForeground(Color.WHITE);
 
             JLabel bildLabel = new JLabel();
