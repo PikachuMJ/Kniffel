@@ -20,15 +20,26 @@ public class WuerfelFenster extends JFrame implements ActionListener
     int buttonPressCount;
     public WuerfelFenster()
     {
-    do
-    {
-        if(Kniffel.aufgeben[Kniffel.playerPlaying - 1])
-        {
-         Kniffel.playerPlaying++;
-            dispose();
-            new WuerfelFenster();
+        try {
+            do {
+                if (Kniffel.aufgeben[Kniffel.playerPlaying - 1]) {
+                    Kniffel.playerPlaying++;
+                    dispose();
+                    new WuerfelFenster();
+                    if (Kniffel.aufgeben[0] && Kniffel.aufgeben[1]
+                            && Kniffel.aufgeben[2]
+                            && Kniffel.aufgeben[3]
+                            && Kniffel.aufgeben[4]
+                            && Kniffel.aufgeben[5]
+                            && Kniffel.aufgeben[6]
+                            && Kniffel.aufgeben[7]) {
+                        System.exit(0);
+                    }
+                }
+            } while (Kniffel.aufgeben[Kniffel.playerPlaying - 1]);
+        }catch (Exception e){
+            System.exit(0);
         }
-    }while(Kniffel.aufgeben[Kniffel.playerPlaying]);
         setTitle("Wähle aus, was du behalten willst");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
