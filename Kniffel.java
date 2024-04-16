@@ -12,8 +12,7 @@ import javax.swing.*;
  * @author MAP
  * @version 20240406.77
  */
-public class Kniffel
-{
+public class Kniffel {
     // Arrays speichern die namen der Spieler
     // und der einzelnen button availability
     static String[] pNames = new String[8];
@@ -33,45 +32,44 @@ public class Kniffel
     // speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
     static int AusFenButCount = 0;
 
-    public static void main(String[] kniffelDings)
-    {
+    public static void main(String[] kniffelDings) {
+        if (!Punkte.start) {
+            new StartMenu();
+        }
+        if (Punkte.start) {
         Arrays.fill(Kniffel.aufgeben, false);
-        ImageIcon spielerAnzahl   = new ImageIcon("spielerAnzahl.png");
+        ImageIcon spielerAnzahl = new ImageIcon("spielerAnzahl.png");
 
         ImageIcon[] namenEingabeBilder = new ImageIcon[]
                 {
-                new ImageIcon("namenEingabe1.png"),
-                new ImageIcon("namenEingabe2.png"),
-                new ImageIcon("namenEingabe3.png"),
-                new ImageIcon("namenEingabe4.png"),
-                new ImageIcon("namenEingabe5.png"),
-                new ImageIcon("namenEingabe6.png"),
-                new ImageIcon("namenEingabe7.png"),
-                new ImageIcon("namenEingabe8.png")
-        };
+                        new ImageIcon("namenEingabe1.png"),
+                        new ImageIcon("namenEingabe2.png"),
+                        new ImageIcon("namenEingabe3.png"),
+                        new ImageIcon("namenEingabe4.png"),
+                        new ImageIcon("namenEingabe5.png"),
+                        new ImageIcon("namenEingabe6.png"),
+                        new ImageIcon("namenEingabe7.png"),
+                        new ImageIcon("namenEingabe8.png")
+                };
         int toleranz = 1;
         // Einfache do schleife, zur auswahl der Spieler
-        do
-        {
-            try
-            {
+        do {
+            try {
                 // JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden. kp wieso
-                playerPlaying = Integer.parseInt((String)JOptionPane.showInputDialog(null,
+                playerPlaying = Integer.parseInt((String) JOptionPane.showInputDialog(null,
                         "Wie viele Spieler machen mit? \n (maximal 8 Spieler",
-                            "Spieler Anzahl Eingabe",
-                                  JOptionPane.PLAIN_MESSAGE, spielerAnzahl, null, ""));
-            } catch (Exception e)
-            {
-                if(toleranz > 3)
-                {
-                System.exit(0);
+                        "Spieler Anzahl Eingabe",
+                        JOptionPane.PLAIN_MESSAGE, spielerAnzahl, null, ""));
+            } catch (Exception e) {
+                if (toleranz > 3) {
+                    System.exit(0);
                 }
                 JOptionPane.showMessageDialog(null,
                         "Falsche Eingabe", "FehlerAusgabe", JOptionPane.ERROR_MESSAGE);
                 playerPlaying = 0;
                 toleranz++;
             }
-        }while (playerPlaying < 1 || playerPlaying > 8);
+        } while (playerPlaying < 1 || playerPlaying > 8);
         // maxPLayer sind die ausgewählten spieler,
         // playerPlaying verändert sich ständig und ist
         maxPlayerCount = playerPlaying;
@@ -91,8 +89,7 @@ public class Kniffel
          *btw den namen hat sich ein Freund von mir ausgedacht :O
          *nichts anderes wie buttonPressCount
          */
-        switch(playerPlaying)
-        {
+        switch (playerPlaying) {
             case 1 -> lidlLohntSich = 13;
             case 2 -> lidlLohntSich = 26;
             case 3 -> lidlLohntSich = 39;
@@ -103,16 +100,14 @@ public class Kniffel
             case 8 -> lidlLohntSich = 104;
         }
         // wird durch die player gelooped, und nach namen gefragt
-        for (int i = 0; i < playerPlaying; i++)
-        {
+        for (int i = 0; i < playerPlaying; i++) {
             String playerName = (String) JOptionPane.showInputDialog(null,
                     "Spieler " + (i + 1) + ", geben sie Ihren Namen an",
                     "Spieler " + (i + 1) + " Namen Eingabe",
                     // Bild je nach spieler
                     JOptionPane.PLAIN_MESSAGE, namenEingabeBilder[i], null, "");
             // Wenn der Name leer ist, wird der Name NULL + spielerZahl gesetzt
-            if (playerName == null)
-            {
+            if (playerName == null) {
                 playerName = "NULL_" + (i + 1);
             }
             // Name wird hinzugefügt :O
@@ -120,6 +115,7 @@ public class Kniffel
         }
         // Player wird auf 1 gesetzt, damit auch der erste anfängt
         playerPlaying = 1;
-        new WuerfelFenster();
+            new WuerfelFenster();
+        }
     }
 }
