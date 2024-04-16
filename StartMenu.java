@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
@@ -16,24 +17,49 @@ public class StartMenu implements ActionListener
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             startButton.setFocusable(false);
-            startButton.setBounds(9,5,150,100);
+            startButton.setBounds(200,300,100,100);
+
+            JPanel panelStart = new JPanel();
+            panelStart.setBounds(0,400,100,100);
+            panelStart.add(startButton );
+
             regelButton.setFocusable(false);
-            regelButton.setBounds(9,105,150,100);
+            regelButton.setBounds(200,105,150,100);
+
+            JPanel panelRegeln = new JPanel();
+            panelRegeln.setBounds(200,400,100,100);
+            panelRegeln.add(regelButton);
+
             exitButton.setFocusable(false);
-            exitButton.setBounds(9,205, 150, 100);
+            exitButton.setBounds(200,150, 150, 100);
+            JPanel panelExit = new JPanel();
+            panelExit.setBounds(400,400,100,100);
+            panelExit.add(exitButton);
+
+            JLabel textLabel = new JLabel("Willkommen zu Kniffel!");
+            textLabel.setSize(500, 200);
+            textLabel.setHorizontalAlignment(JLabel.CENTER);
+            textLabel.setFont(new Font("Monospace", Font.PLAIN, 30));
+            textLabel.setForeground(Color.WHITE);
+
+            JLabel bildLabel = new JLabel();
+            bildLabel.setSize(500, 390);
+            bildLabel.setIcon(new ImageIcon("end.png"));
 
             startButton.addActionListener(this);
             regelButton.addActionListener(this);
             exitButton.addActionListener(this);
 
-            menu.add(startButton);
+            menu.add(panelStart);
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             menu.setLayout(null);
-            menu.setSize(170,345);
+            menu.setSize(500,500);
             menu.setVisible(true);
             menu.setLocationRelativeTo(null);
-            menu.add(regelButton);
-            menu.add(exitButton);
+            menu.add(panelRegeln);
+            menu.add(panelExit);
+            menu.add(textLabel);
+            menu.add(bildLabel);
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             menu.setLayout(null);
     }

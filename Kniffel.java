@@ -10,7 +10,7 @@ import javax.swing.*;
  * ist was anderes :O aber lerne ja noch
  *
  * @author MAP
- * @version 20240406.77
+ * @version 20240406.82
  */
 public class Kniffel {
     // Arrays speichern die namen der Spieler
