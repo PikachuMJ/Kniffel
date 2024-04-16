@@ -29,7 +29,7 @@ public class StartMenu implements ActionListener
             menu.add(startButton);
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             menu.setLayout(null);
-            menu.setSize(1700,345);
+            menu.setSize(170,345);
             menu.setVisible(true);
             menu.setLocationRelativeTo(null);
             menu.add(regelButton);
@@ -43,20 +43,27 @@ public class StartMenu implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         JButton clickedButton = (JButton) e.getSource();
-        if (startButton == clickedButton){
+        if (startButton == clickedButton)
+        {
             Punkte.start = true;
-            JOptionPane.showMessageDialog(null,"Start ");
+            menu.dispose();
             new Kniffel();
         }
-            if(regelButton == clickedButton){
-                menu.setVisible(false);
-                String test = (String)JOptionPane.showInputDialog(null,
+        if(regelButton == clickedButton)
+        {
+                menu.dispose();
+                String zurueck = (String)JOptionPane.showInputDialog(null,
                         "Geben sie ’back’ ein, um wieder zurück zu gehen",
                         "Regeln",
                         JOptionPane.PLAIN_MESSAGE, regelnBild, null, "");
-            if(Objects.equals(test, "back")){
+            if(Objects.equals(zurueck, "back"))
+            {
                 new StartMenu();
             }
+        }
+        if(exitButton == clickedButton)
+        {
+            System.exit(0);
         }
     }
 }

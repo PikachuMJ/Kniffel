@@ -36,7 +36,8 @@ public class Kniffel {
         if (!Punkte.start) {
             new StartMenu();
         }
-        if (Punkte.start) {
+    }
+    public Kniffel(){
         Arrays.fill(Kniffel.aufgeben, false);
         ImageIcon spielerAnzahl = new ImageIcon("spielerAnzahl.png");
 
@@ -118,4 +119,3 @@ public class Kniffel {
             new WuerfelFenster();
         }
     }
-}
