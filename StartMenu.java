@@ -13,7 +13,7 @@ public class StartMenu implements ActionListener
     ImageIcon regelnBild = new ImageIcon("kniffelRegeln.png");
         public StartMenu()
         {
-            menu.setTitle("Willkommen zum spiel Kniffel");
+            menu.setTitle("Willkommen zum Spiel Kniffel");
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             startButton.setFocusable(false);
