@@ -6,7 +6,6 @@ import java.util.Objects;
 public class StartMenu implements ActionListener
 {
     JFrame menu = new JFrame();
-    JFrame regeln = new JFrame();
     JButton startButton = new JButton("Start");
     JButton regelButton = new JButton("Regeln");
     JButton exitButton = new JButton("Exit");
