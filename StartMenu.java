@@ -6,18 +6,21 @@ import java.util.Objects;
 
 public class StartMenu implements ActionListener
 {
+    ImageIcon[] image = {new ImageIcon("start.png"), new ImageIcon("regeln.png"), new ImageIcon("exit.png")};
+
     JFrame menu = new JFrame();
-    JButton startButton = new JButton("Start");
-    JButton regelButton = new JButton("Regeln");
-    JButton exitButton = new JButton("Exit");
+    JButton startButton = new JButton(image[0]);
+    JButton regelButton = new JButton(image[1]);
+    JButton exitButton = new JButton(image[2]);
     ImageIcon regelnBild = new ImageIcon("kniffelRegeln.png");
         public StartMenu()
         {
+
             menu.setTitle(":O");
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             startButton.setFocusable(false);
-            startButton.setBounds(200,300,100,100);
+            startButton.setBounds(200,300,50,100);
             startButton.setPreferredSize(new Dimension(150, 50));
 
             JPanel panelStart = new JPanel();
