@@ -18,22 +18,25 @@ public class StartMenu implements ActionListener
 
             startButton.setFocusable(false);
             startButton.setBounds(200,300,100,100);
+            startButton.setPreferredSize(new Dimension(150, 50));
 
             JPanel panelStart = new JPanel();
-            panelStart.setBounds(0,400,100,100);
+            panelStart.setBounds(0,400,150,60);
             panelStart.add(startButton );
 
             regelButton.setFocusable(false);
             regelButton.setBounds(200,105,150,100);
+            regelButton.setPreferredSize(new Dimension(150, 50));
 
             JPanel panelRegeln = new JPanel();
-            panelRegeln.setBounds(200,400,100,100);
+            panelRegeln.setBounds(170,400,150,60);
             panelRegeln.add(regelButton);
 
             exitButton.setFocusable(false);
             exitButton.setBounds(200,150, 150, 100);
+            exitButton.setPreferredSize(new Dimension(150, 50));
             JPanel panelExit = new JPanel();
-            panelExit.setBounds(400,400,100,100);
+            panelExit.setBounds(340,400,150,60);
             panelExit.add(exitButton);
 
             JLabel textLabel = new JLabel("Willkommen zu Kniffel!");
