@@ -13,7 +13,7 @@ public class StartMenu implements ActionListener
     JButton regelButton = new JButton(image[1]);
     JButton exitButton = new JButton(image[2]);
     ImageIcon regelnBild = new ImageIcon("kniffelRegeln.png");
-        public StartMenu()
+    public StartMenu()
         {
 
             menu.setTitle(":O");
@@ -68,7 +68,7 @@ public class StartMenu implements ActionListener
             menu.add(bildLabel);
             menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             menu.setLayout(null);
-    }
+       }
 
 
     @Override
