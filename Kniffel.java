@@ -32,7 +32,7 @@ public class Kniffel {
     // speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
     static int AusFenButCount = 0;
 
-    public static void main(String[] kniffelDings) {
+    public void main() {
         new StartMenu();
     }
     public Kniffel() {
@@ -100,13 +100,13 @@ public class Kniffel {
         // wird durch die player gelooped, und nach namen gefragt
         for (int i = 0; i < playerPlaying; i++) {
             String playerName = (String) JOptionPane.showInputDialog(null,
-                    "Spieler " + (i + 1) + ", geben sie Ihren Namen an",
-                    "Spieler " + (i + 1) + " Namen Eingabe",
+                    STR."Spieler \{i + 1}, geben sie Ihren Namen an",
+                    STR."Spieler \{i + 1} Namen Eingabe",
                     // Bild je nach spieler
                     JOptionPane.PLAIN_MESSAGE, namenEingabeBilder[i], null, "");
             // Wenn der Name leer ist, wird der Name NULL + spielerZahl gesetzt
             if (playerName == null) {
-                playerName = "NULL_" + (i + 1);
+                playerName = STR."NULL_\{i + 1}";
             }
             // Name wird hinzugefügt :O
             pNames[i] = playerName;

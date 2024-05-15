@@ -72,7 +72,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                          * wird sich drum gekümmert
                          */
                         System.out.println(
-                                "Unzulässiger playerPlaying wert: " + Kniffel.playerPlaying);
+                                STR."Unzulässiger playerPlaying wert: \{Kniffel.playerPlaying}");
                         keinFehler = false;
                     }
                 }
@@ -106,7 +106,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
                 was bei einem richtigen ablauf nicht passieren sollte
             */
             default -> throw new IllegalStateException(
-                    "Unerwarteter Wert " + Kniffel.playerPlaying);
+                    STR."Unerwarteter Wert \{Kniffel.playerPlaying}");
         };
     }
     public void actionPerformed(ActionEvent e)
@@ -282,7 +282,7 @@ public class AuswahlFenster extends JFrame implements ActionListener
              * Allgemein dafür gedacht, um spieler zu zeigen, was er ausgewählt hat,
              * wenn er sich nicht sicher ist
              */
-            JOptionPane.showMessageDialog(this, "Du hast " + clickedButton.getText()+ " ausgewählt");
+            JOptionPane.showMessageDialog(this, STR."Du hast \{clickedButton.getText()} ausgewählt");
             // knopf kann nicht mehr gedrückt werden (ausgegraut)
             currPlayAvail[index] = false;
             // Knopf verschwindet bzw gelöscht
