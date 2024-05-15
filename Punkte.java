@@ -4,7 +4,6 @@
  */
 public class Punkte
 {
-    static boolean start = false;
     static boolean bonusCheck1 = true;
     static boolean bonusCheck2 = true;
     static boolean bonusCheck3 = true;

@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
 public class StartMenu implements ActionListener
 {
@@ -74,26 +73,18 @@ public class StartMenu implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        JButton clickedButton = (JButton) e.getSource();
-        if (startButton == clickedButton)
+        if (startButton == e.getSource())
         {
-            Punkte.start = true;
             menu.dispose();
             new Kniffel();
         }
-        if(regelButton == clickedButton)
+        if(regelButton == e.getSource())
         {
-                menu.dispose();
-                String zurueck = (String)JOptionPane.showInputDialog(null,
-                        "Geben sie ’back’ ein, um wieder zurück zu gehen",
-                        "Regeln",
-                        JOptionPane.PLAIN_MESSAGE, regelnBild, null, "");
-            if(Objects.equals(zurueck, "back"))
-            {
-                new StartMenu();
-            }
+            menu.dispose();
+            JOptionPane.showMessageDialog(null, "", "",JOptionPane.ERROR_MESSAGE, regelnBild);
+            new StartMenu();
         }
-        if(exitButton == clickedButton)
+        if(exitButton == e.getSource())
         {
             System.exit(0);
         }

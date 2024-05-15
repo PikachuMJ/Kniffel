@@ -1,5 +1,5 @@
-import java.util.Arrays;
 import javax.swing.*;
+import java.util.Arrays;
 
 /**
  * Kniffel
@@ -12,8 +12,7 @@ import javax.swing.*;
  * @author MAP
  * @version 20240406.84
  */
-public class Kniffel
-{
+public class Kniffel {
     // Arrays speichern die namen der Spieler
     // und der einzelnen button availability
     static String[] pNames = new String[8];
@@ -33,20 +32,14 @@ public class Kniffel
     // speichert Anzahl der Knopfdrücke die in AuswahlFenster passieren
     static int AusFenButCount = 0;
 
-    public static void main(String[] kniffelDings)
-    {
-        if (!Punkte.start)
-        {
-            new StartMenu();
-        }
+    public static void main(String[] kniffelDings) {
+        new StartMenu();
     }
-    public Kniffel()
-    {
+    public Kniffel() {
         Arrays.fill(Kniffel.aufgeben, false);
         ImageIcon spielerAnzahl = new ImageIcon("spielerAnzahl.png");
 
-        ImageIcon[] namenEingabeBilder = new ImageIcon[]
-                {
+        ImageIcon[] namenEingabeBilder = new ImageIcon[]{
                         new ImageIcon("namenEingabe1.png"),
                         new ImageIcon("namenEingabe2.png"),
                         new ImageIcon("namenEingabe3.png"),
@@ -58,19 +51,15 @@ public class Kniffel
                 };
         int toleranz = 1;
         // Einfache do schleife, zur auswahl der Spieler
-        do
-        {
-            try
-            {
+        do {
+            try {
                 // JOptionPane wäre ein object, deshalb muss es zum string konvertiert werden. kp wieso
                 playerPlaying = Integer.parseInt((String) JOptionPane.showInputDialog(null,
                         "Wie viele Spieler machen mit? \n (maximal 8 Spieler",
                         "Spieler Anzahl Eingabe",
                         JOptionPane.PLAIN_MESSAGE, spielerAnzahl, null, ""));
-            } catch (Exception e)
-            {
-                if (toleranz > 3)
-                {
+            } catch (Exception e) {
+                if (toleranz > 3) {
                     System.exit(0);
                 }
                 JOptionPane.showMessageDialog(null,
@@ -98,8 +87,7 @@ public class Kniffel
          *btw den namen hat sich ein Freund von mir ausgedacht :O
          *nichts anderes wie buttonPressCount
          */
-        switch (playerPlaying)
-        {
+        switch (playerPlaying) {
             case 1 -> lidlLohntSich = 13;
             case 2 -> lidlLohntSich = 26;
             case 3 -> lidlLohntSich = 39;
@@ -110,16 +98,14 @@ public class Kniffel
             case 8 -> lidlLohntSich = 104;
         }
         // wird durch die player gelooped, und nach namen gefragt
-        for (int i = 0; i < playerPlaying; i++)
-        {
+        for (int i = 0; i < playerPlaying; i++) {
             String playerName = (String) JOptionPane.showInputDialog(null,
                     "Spieler " + (i + 1) + ", geben sie Ihren Namen an",
                     "Spieler " + (i + 1) + " Namen Eingabe",
                     // Bild je nach spieler
                     JOptionPane.PLAIN_MESSAGE, namenEingabeBilder[i], null, "");
             // Wenn der Name leer ist, wird der Name NULL + spielerZahl gesetzt
-            if (playerName == null)
-            {
+            if (playerName == null) {
                 playerName = "NULL_" + (i + 1);
             }
             // Name wird hinzugefügt :O
